@@ -1,10 +1,13 @@
 // ==UserScript==
 // @name         Nighty-night Google Docs
-// @namespace    http://userstyles.org
+// @namespace    https://github.com/KeyWeeUsr/Userscripts
 // @version      0.1
 // @description  Write at night comfortably!
 // @author       Peter Badida
-// @homepage     https://github.com/KeyWeeUsr/Userscripts
+// @copyright    2016+, Peter Badida
+// @license      GNU GPLv3
+// @homepage     https://github.com/KeyWeeUsr/Userscripts/tree/master/Nighty-night-Google-Docs
+// @supportURL   https://github.com/KeyWeeUsr/Userscripts/issues
 // @include      https://*docs.google.com/document/*
 // @include      https://*docs.google.com/sharing/*
 // @include      https://*docs.google.com/e/organize*
