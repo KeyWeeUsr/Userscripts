@@ -15,3 +15,8 @@ or
 Congratulations, now you can use the script!
 
 If you experienced any problems, please visit <code>Issues</code> section.
+## Gallery
+##### Nighty-night Google Docs
+A dark Lightroom/Photoshop CS6-like theme for Google Docs. Almost everything is adjusted to working at night. Say no more to those white eye-burning pages!
+
+<img src="https://raw.githubusercontent.com/KeyWeeUsr/Userscripts/master/Nighty-night-Google-Docs/nightynight.png" width=500></img>
