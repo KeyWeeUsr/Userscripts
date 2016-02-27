@@ -20,3 +20,7 @@ If you experienced any problems, please visit <code>Issues</code> section.
 A dark Lightroom/Photoshop CS6-like theme for Google Docs. Almost everything is adjusted to working at night. Say no more to those white eye-burning pages!
 
 <img src="https://raw.githubusercontent.com/KeyWeeUsr/Userscripts/master/Nighty-night-Google-Docs/nightynight.png" width=500></img>
+##### Nighty-night Google Translate
+Similar theme as for Google Docs making Google Translate & Google Docs a good combination for writing at night even in foreign language.
+
+<img src="https://raw.githubusercontent.com/KeyWeeUsr/Userscripts/master/Nighty-night-Google-Translate/nightynight2.png" width=500></img>
