@@ -8,7 +8,7 @@
 // @license      GNU GPLv3
 // @homepage     https://github.com/KeyWeeUsr/Userscripts/tree/master/Nighty-night-Google-Translate
 // @supportURL   https://github.com/KeyWeeUsr/Userscripts/issues
-// @include      https://*translate.google.com/*
+// @include      https://*translate.google.*/*
 // @grant        GM_addStyle
 // ==/UserScript==
 /* jshint -W097 */

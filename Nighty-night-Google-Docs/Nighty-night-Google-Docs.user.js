@@ -8,9 +8,9 @@
 // @license      GNU GPLv3
 // @homepage     https://github.com/KeyWeeUsr/Userscripts/tree/master/Nighty-night-Google-Docs
 // @supportURL   https://github.com/KeyWeeUsr/Userscripts/issues
-// @include      https://*docs.google.com/document/*
-// @include      https://*docs.google.com/sharing/*
-// @include      https://*docs.google.com/e/organize*
+// @include      https://*docs.google.*/document/*
+// @include      https://*docs.google.*/sharing/*
+// @include      https://*docs.google.*/e/organize*
 // @grant        GM_addStyle
 // ==/UserScript==
 /* jshint -W097 */
