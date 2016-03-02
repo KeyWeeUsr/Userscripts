@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Nighty-night Google Translate
 // @namespace    https://github.com/KeyWeeUsr/Userscripts
-// @version      0.3
+// @version      0.4
 // @description  Translate at night comfortably!
 // @author       Peter Badida
 // @copyright    2016+, Peter Badida
@@ -9,7 +9,7 @@
 // @homepage     https://github.com/KeyWeeUsr/Userscripts/tree/master/Nighty-night-Google-Translate
 // @supportURL   https://github.com/KeyWeeUsr/Userscripts/issues
 // @include      https://*translate.google.*/*
-// @include      https://plus.google.*/u/0/_/notifications/frame*
+// @include      https://plus.google.*/u/0/_/notifications/frame*origin=https%3A%2F%2Ftranslate.google.*
 // @grant        GM_addStyle
 // ==/UserScript==
 /* jshint -W097 */
@@ -18,7 +18,7 @@
 (function () {
 var css = "\
 /*Text,Buttons,Inputs*/\
-div.gb_lb, div.gt-ex-text, span.gt-syn-span, div.goog-toolbar-button,\
+div#spelling-correction, div.gb_lb, div.gt-ex-text, span.gt-syn-span, div.goog-toolbar-button,\
 .goog-toolbar-menu-button {color: #777777;}\
 li.ita-kd-menuitem, span.ita-kd-menuitem-inputtool-name, div.goog-menuitem-content, span.gt-card-ttl-txt,\
 span.gt-rw-span, div.gt-def-row, a, div.gt-baf-word-clickable, textarea#source {color: #777777 !important;}\
@@ -27,7 +27,7 @@ span.ita-kd-inputtools-div, div.goog-flat-menu-button, input.jfk-button-action, 
 a.gb_Ca{color: #444444; background-image: none; background-color: #696969 !important; border-color: #696969;}\
 button.gbqfb, a.gb_nb {background:#696969 !important; border-color: #666666 !important;\
 color: #444444 !important;}\
-button.gbqfb:hover, a.gb_nb:hover {background-color: #f8f8f8 !important;}\
+input#gt-submit:hover, button.gbqfb:hover, a.gb_nb:hover {background-color: #f8f8f8 !important;}\
 \
 /*Borders*/\
 div#gbsfw, div#gt-src-wrap {border-color: #777777 !important;}\
@@ -60,9 +60,17 @@ span.gb_Nb {background-image: none; display: inline !important; left:-10px;}\
 span.gb_Nb:after {content: 'Google';}\
 div.gb_Td>.gb_R {line-height: 60px;}\
 div.gb_Jb {padding: 0 20px 0 24px; width: 80%;}\
+img#kwu_av:hover {opacity: 1 !important;}\
+body.Vzc {background-color: transparent !important; background: transparent !important;}\
 \
 "
-GM_addStyle(css);})();
+GM_addStyle(css);
+var panel=document.getElementById('gt-lang-right');
+var av='<a href="https://github.com/KeyWeeUsr/Userscripts"><img id="kwu_av"\
+src="https://github.com/identicons/KeyWeeUsr.png" width="28" style="position:\
+relative; opacity: 0.3; float: right; right: 4px;"></img></a>';
+panel.insertAdjacentHTML('afterbegin', av);
+})();
 /*
 Notify me if there's something missing/undesirable.
 */

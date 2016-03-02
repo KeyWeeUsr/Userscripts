@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Nighty-night Google Docs
 // @namespace    https://github.com/KeyWeeUsr/Userscripts
-// @version      0.3
+// @version      0.4
 // @description  Write at night comfortably!
 // @author       Peter Badida
 // @copyright    2016+, Peter Badida
@@ -12,6 +12,7 @@
 // @include      https://*docs.google.*/sharing/*
 // @include      https://*docs.google.*/e/organize*
 // @include      https://*docs.google.*/picker*
+// @include      https://*.google.*/webstore/wall/widget?container=GOOGLE_DOCUMENT*ref=https%3A%2F%2Fdocs.google.*
 // @grant        GM_addStyle
 // ==/UserScript==
 /* jshint -W097 */
@@ -20,6 +21,7 @@
 (function () {
 var css = "\
 /*TOOLBAR*/\
+img#kwu_av:hover {opacity: 1 !important;}\
 div.goog-menu-vertical, div#docs-menu-shield, div#docs-branding-container.docs-branding-documents, \
 div.goog-sa-pane-inner {background-color: #242424 !important; background: #242424;}\
 div.docs-icon-folder-solid {background-color: #696969 !important;}\
@@ -39,7 +41,7 @@ div#docs-toolbar, div.goog-toolbar, div.ac-renderer, div.apps-shortcutshelppopup
 div#docs-revisions-sidebar-header {background-color: #191919 !important; border: 0 !important;}\
 \
 /*BUTTONS*/\
-button.simple-sharing-primary-button, div.jfk-button-action, button.goog-buttonset-action \
+span.g-aa-ca, button.simple-sharing-primary-button, div.jfk-button-action, button.goog-buttonset-action \
 {color: #cccccc; background: #696969 !important; background-color: #696969 !important; \
 border: 0 !important; background-image: none !important;}\
 div.goog-toolbar-separator{visibility: hidden;}\
@@ -55,7 +57,7 @@ input.jfk-textinput, input.jfk-textinput:focus {background-color: #696969 !impor
 color: #333333 !important;}\
 div.goog-flat-menu-button, div.inviter-role-area > div.goog-flat-menu-button \
 {background-color: #696969 !important; background-image: none !important; border: 0 !important;} \
-div.goog-flat-menu-button-hover, div.inviter-role-area > div.goog-flat-menu-button-hover, \
+span.g-aa-ca:hover, div.goog-flat-menu-button-hover, div.inviter-role-area > div.goog-flat-menu-button-hover, \
 div.jfk-button-hover {background-color: #f8f8f8 !important; background-image: none !important; \
 border: 0 !important;} \
 div.goog-toolbar-menu-button-caption, input.goog-toolbar-combo-button-input, \
@@ -99,9 +101,9 @@ table.docs-findinput-container-focus {background-color: #777777 !important; bord
 \
 /*MODALS*/\
 div:focus {outline: none;}\
-div.Jd-Od-Pe-cb, div.Jd-Od-Pe, div.Jd-Od-Pe-hf:hover, div.modal-dialog, div.modal-dialog-title,\
+div.webstore-widget, div.Jd-Od-Pe-cb, div.Jd-Od-Pe, div.Jd-Od-Pe-hf:hover, div.modal-dialog, div.modal-dialog-title,\
 div.modal-dialog-content, div.modal-dialog-bg, div.data-dialog {color:#777777; background: #393939\
-!important; background-color: #393939 !important; border-bottom: 0;}\
+!important; background-color: #393939 !important; border-bottom: 0 !important;}\
 h3.apps-shortcutshelppopup-search-label, h3.apps-shortcutshelppopup-content-header, \
 div.mg-og-Zb-Jh, h2.apps-shortcutshelppopup-dialog-title {color: #777777 !important;}\
 div.apps-shortcutshelppopup{background-color:#242424 !important;}\
@@ -116,28 +118,35 @@ div.docs-preferencesdialog-list-body::-webkit-scrollbar-thumb, div.apps-shortcut
 div.goog-tree-root {border: 0 !important;}\
 label.mg-gh-Pe, div.mg-og-Zb-pg-Yb-qg .a-kb-u, div.mg-og-Zb-pg-Yb-qg .a-pg, div.folder-creation-link,\
 div.folder-creation-link:hover, span.modal-dialog-title-text {color: #777777 !important;}\
-textarea#alt-text-dialog-description {background-color: #696969 !important; border: 0;}\
+div.a-d-Ec, textarea#alt-text-dialog-description {background-color: #696969 !important; border: 0 !important;}\
 div.Jd-Od-nc-w, div.mg-tg-Ef, div.mg-pf-Jd-qe, div.modal-dialog-content > body {background-color:\
 #393939 !important; border-top:0;}\
 div.Jd-ue-Je-Nf Jd-Be-Ce, div.a-pg-w {border-bottom: 2px solid #777777 !important;}\
 div.mg-ng-pf .mg-og-Zb-Ef {border-bottom: 0 !important; box-shadow: none !important;}\
 div.Pd-ke-he-f-Kc {background-color: #595959 !important; color: #777777;}\
 div.mg-Zb-og-Xf-kb, div.mg-gl-Ug-gl-le, div.mg-ng-pf .mg-nb-kb.mg-Kj-nb-kb, input.mg-gh-Qc,\
-input.mg-wh-Qc-qb, div.oe-pe-td .Jd-If-pe-Kc, div.Pd-ke-he-cb-Kc {background-color: #595959 !important;\
-border: 0;}\
+input.h-n-j-Qc-lc, input.mg-wh-Qc-qb, div.oe-pe-td .Jd-If-pe-Kc, div.Pd-ke-he-cb-Kc {background-color: \
+#595959 !important; border: 0;}\
+input.h-n-j-Qc-lc {color: #777777 !important;}\
 div.mg-qh-Bg, div.mg-eb-Kc {border-top: 0 !important;}\
 div.picker.modal-dialog {border:0;}\
 div.a-kb-u-v, div.a-pg-v {border-bottom-color: #777777 !important;}\
 div.mg-Hl-Ug-E .mg-Hl-Ug-Ae {border: 5px #777777 solid;}\
-div.mg-og-Zb-pg-Yb-qg .mg-og-Zb-wc {border-left-color: #777777 !important}\
+div.mg-og-Zb-pg-Yb-qg .mg-og-Zb-wc {border-left-color: #777777 !important;}\
+div.O-j {background-color: #494949 !important;}\
 \
 "
-GM_addStyle(css);})();
+GM_addStyle(css);
+var panel=document.body;
+var av='<div style="position: absolute; left: 48.5vw; top: 1vh;"><a \
+href="https://github.com/KeyWeeUsr/Userscripts"><img id="kwu_av" style="opacity: 0.3;"\
+src="https://github.com/identicons/KeyWeeUsr.png" width="24"></img></a></div>';
+panel.insertAdjacentHTML('beforeend', av);
+})();
 /*
 Missing:
 1) Help modal
 2) Input placeholder color stucked at initial
-3) Webstore modal
-4) Comments
-5) Research panel
+3) Comments
+4) Research panel
 */
