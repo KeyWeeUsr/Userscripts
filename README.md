@@ -1,5 +1,5 @@
 # Userscripts
-Welcome to my small US collection, I hope you'll find it useful. :)
+Welcome to my small script collection, I hope you'll find it useful. :)
 ## How to install
 You'll need an extension for your browser to use these scripts.
 ##### Prerequisites
@@ -8,9 +8,14 @@ or
 - [Greasemonkey(Firefox)](http://www.greasespot.net)
 
 ##### Installation
+###### GitHub
 - Navigate to the script(<code>*.user.js</code>) you want to install in the repository
 - Click on the <code>Raw</code> button! The extension will recognize <code>*.user.js</code> file.
 - Install it!
+
+###### Other sites
+- [Greasy Fork](https://greasyfork.org/en/users/29508-keyweeusr)
+- [OpenUserJS](https://openuserjs.org/users/KeyWeeUsr/scripts)
 
 Congratulations, now you can use the script!
 
