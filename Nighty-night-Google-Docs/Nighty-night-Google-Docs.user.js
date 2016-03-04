@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Nighty-night Google Docs
 // @namespace    https://github.com/KeyWeeUsr/Userscripts
-// @version      0.4
+// @version      0.5
 // @description  Write at night comfortably!
 // @author       Peter Badida
 // @copyright    2016+, Peter Badida
@@ -134,6 +134,19 @@ div.a-kb-u-v, div.a-pg-v {border-bottom-color: #777777 !important;}\
 div.mg-Hl-Ug-E .mg-Hl-Ug-Ae {border: 5px #777777 solid;}\
 div.mg-og-Zb-pg-Yb-qg .mg-og-Zb-wc {border-left-color: #777777 !important;}\
 div.O-j {background-color: #494949 !important;}\
+\
+div.docos-anchoredreplyview-author, div.docos-docoview-reopen, div.docos-docoview-comment,\
+div.docos-docoview-resolve,  div.docos-replyview-edit, div.docos-replyview-edit:hover, \
+div.docos-showrepliesbutton-collapsed {color: #777777 !important}\
+div.docos-anchoreddocoview-input-pane, div.docos-anchoredreplyview, div.docos-showrepliesbutton\
+{background-color: #393939 !important; background: #393939 !important;}\
+div.docos-anchoreddocoview-arrow-outer, div.docos-anchoreddocoview-arrow-inner {border-right:\
+20px solid #393939 !important}\
+textarea.docos-input-textarea {background-color: #777777 !important}\
+div.docos-streamrootreplyview, div.docos-streamreplyview, div.docos-streamdocoview-inputcontainer,\
+div.docos-overflowmenu-vertical, div.docos-actionmenu-vertical {background-color: #494949 !important;}\
+div.docos-anchoredreplyview, div.docos-showrepliesbutton {border-bottom-color: #595959 !important;}\
+div.docos-streamdocoview {border-top-color: #595959 !important;}\
 \
 "
 GM_addStyle(css);
