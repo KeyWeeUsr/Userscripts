@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Nighty-night Google Docs
 // @namespace    https://github.com/KeyWeeUsr/Userscripts
-// @version      0.5
+// @version      0.6
 // @description  Write at night comfortably!
 // @author       Peter Badida
 // @copyright    2016+, Peter Badida
@@ -75,7 +75,7 @@ div.kix-ruler-contributed-dragger-container, div#kix-ruler {border:0; background
 div.kix-ruler-background-inner {background-color: #555555 !important;}\
 \
 /*DOCUMENT*/\
-body {background-color: transparent; color: #777777;}\
+body {background-color: black; color: #777777;}\
 div#docs-editor, div#docs-editor-container {background-color: black !important;}\
 div.kix-findselectionprovider-underlay-match, div.kix-findandreplaceoverlayprovider-match, \
 div.kix-selection-overlay { background-color: #444444 !important; border-color: #444444;}\
@@ -135,6 +135,7 @@ div.mg-Hl-Ug-E .mg-Hl-Ug-Ae {border: 5px #777777 solid;}\
 div.mg-og-Zb-pg-Yb-qg .mg-og-Zb-wc {border-left-color: #777777 !important;}\
 div.O-j {background-color: #494949 !important;}\
 \
+/*COMMENTS*/\
 div.docos-anchoredreplyview-author, div.docos-docoview-reopen, div.docos-docoview-comment,\
 div.docos-docoview-resolve,  div.docos-replyview-edit, div.docos-replyview-edit:hover, \
 div.docos-showrepliesbutton-collapsed {color: #777777 !important}\
@@ -148,6 +149,30 @@ div.docos-overflowmenu-vertical, div.docos-actionmenu-vertical {background-color
 div.docos-anchoredreplyview, div.docos-showrepliesbutton {border-bottom-color: #595959 !important;}\
 div.docos-streamdocoview {border-top-color: #595959 !important;}\
 \
+/*RESEARCH*/\
+div.goog-sa-pane-search {background-color: #393939;}\
+div.goog-sa-searchbox-fwd-button.jfk-button-disabled, div.goog-sa-searchbox-back-button.jfk-button-disabled,\
+div.goog-sa-searchbox.goog-sa-component-online .goog-sa-searchbox-selectormenu, div.goog-sa-searchbox-back-button,\
+div.goog-sa-searchbox-fwd-button {background-color: #898989 !important; background: #898989 !important; border: 1px\
+solid #777777 !important; border-right: none !important;}\
+div.goog-sa-searchbox-container, div.goog-sa-searchbox-selectormenu {border-color: #777777 !important;\
+background-color: #595959 !important;}\
+div.goog-sa-settings-toggle-content, div.goog-sa-settings-controls, div.goog-sa-pane-search {border-color:\
+#777777 !important;}\
+.goog-sa-personal .goog-sa-snippet-title-link, div.goog-sa-pane-title {color: #777777 !important;}\
+div.goog-sa-previewpane-closestrip, div.goog-sa-previewpane, div.goog-sa-pane-attribution {background-color:\
+#393939 !important; border-color: #777777 !important;}\
+div.goog-sa-component-online.goog-sa-component-active.goog-sa-sectiongroup-heading, div.goog-sa-button-bar,\
+div.goog-sa-button-bar, div.goog-sa-scrollfloater > div {background-color: #595959 !important; border-color:\
+#777777 !important;}\
+div.goog-sa-sectiongroup-heading {border: 0 !important;}\
+div.goog-sa-common-heading {background-color: transparent;}\
+a.goog-sa-personal.goog-sa-component-active.goog-sa-component-online .goog-sa-snippet-title-link,\
+a.goog-sa-common-heading, .goog-sa-content-link, a.goog-sa-snippet-title-link, a.goog-sa-snippet-title-link:hover,\
+a.goog-sa-link {color: #777777 !important; text-decoration: underline !important;}\
+div.goog-sa-component-online.goog-sa-component-focus.goog-sa-searchbox .goog-sa-searchbox-selectormenu,\
+div.goog-sa-component-online.goog-sa-component-active.goog-sa-snippet {border-color: #777777 !important;}\
+\
 "
 GM_addStyle(css);
 var panel=document.body;
@@ -160,6 +185,4 @@ panel.insertAdjacentHTML('beforeend', av);
 Missing:
 1) Help modal
 2) Input placeholder color stucked at initial
-3) Comments
-4) Research panel
 */
