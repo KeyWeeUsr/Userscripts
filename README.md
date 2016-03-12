@@ -4,8 +4,9 @@ Welcome to my small script collection, I hope you'll find it useful. :)
 You'll need an extension for your browser to use these scripts.
 ##### Prerequisites
 - [Tampermonkey(Chrome)](https://tampermonkey.net)
-or
 - [Greasemonkey(Firefox)](http://www.greasespot.net)
+- [Violent monkey(Opera)](https://addons.opera.com/sk/extensions/details/violent-monkey/)
+- [Greasemonkey Port(SeaMonkey)](https://sourceforge.net/projects/gmport/)
 
 ##### Installation
 ###### GitHub
