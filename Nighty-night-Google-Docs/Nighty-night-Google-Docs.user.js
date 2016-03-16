@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Nighty-night Google Docs
 // @namespace    https://github.com/KeyWeeUsr/Userscripts
-// @version      0.7
+// @version      0.8
 // @description  Write at night comfortably!
 // @author       Peter Badida
 // @copyright    2016+, Peter Badida
@@ -23,7 +23,7 @@
 var css = "\
 img#kwu_av:hover {opacity: 1 !important;}\
 \
-/*TOOLBARy*/\
+/*TOOLBAR*/\
 div#docs-chrome, div#docs-toolbar-wrapper, div#docs-title-widget div.goog-inline-block, \
 div.goog-toolbar {\
     color: #777777 !important;\
@@ -86,7 +86,7 @@ div#picker:ap:1, div.jfk-button, div.jfk-button-mini {\
     background-image: none !important;\
     border: 0 !important;\
 }\
-div.jfk-button:hover, a.gb_nb.gb_nb:hover {\
+div.jfk-button:hover {\
     color: #333333 !important;\
     background-color: #f8f8f8 !important;\
     background-image: none !important;\
@@ -112,7 +112,7 @@ div.jfk-button-standard{\
     border: 0 !important;\
 }\
 \
-/*MENUBARy*/\
+/*MENUBAR*/\
 div.goog-menuseparator {\
 	border:0;\
 }\
@@ -331,7 +331,7 @@ td.kix-documentmetricsdialog-row {\
 	border-bottom-color: #777777 !important;\
 }\
 \
-/*FIND-REPLACEy*/\
+/*FIND-REPLACE*/\
 div.kix-findselectionprovider-underlay-match, div.kix-findandreplaceoverlayprovider-match, \
 div.kix-selection-overlay {\
 	background-color: #444444 !important;\
@@ -356,7 +356,7 @@ div.goog-dimension-picker-unhighlighted {\
 	background-color: #777777 !important;\
 }\
 \
-/*COMPACT TOOLBARy*/\
+/*COMPACT TOOLBAR*/\
 div.ac-renderer {\
 	background-color: #191919 !important;\
 	border: 0 !important;\
@@ -385,7 +385,7 @@ div.docs-image-effect-recolor-tile, div.docs-image-effect-adjustment-tile {\
 	color: #666666 !important;\
 }\
 \
-/*BUBBLESy*/\
+/*BUBBLES*/\
 div.docs-bubble, span.docs-bubble-link, div.jfk-bubble {\
 	border:0;\
 	background-color:#333333;\
@@ -398,7 +398,7 @@ div.jfk-bubble-arrowimplbefore, div.jfk-bubble-arrowimplafter {\
 	border-color: #333333 transparent !important;\
 }\
 \
-/*COMMENTSy*/\
+/*COMMENTS*/\
 div.docos-anchoreddocoview-arrow-outer, div.docos-anchoreddocoview-arrow-inner {\
 	border-right: 20px solid #393939 !important}\
 div.docos-streampane-content, div.docos-streampane-header {\
@@ -462,7 +462,7 @@ textarea#alt-text-dialog-description {\
 	border: 0 !important;\
 }\
 \
-/*SPELL-CHECKy*/\
+/*SPELL-CHECK*/\
 label.docs-spellcheckslidingdialog-title-text {\
 	color: #666666 !important;\
 }\
@@ -480,7 +480,7 @@ div#docs-spellcheckslidingdialog-suggestion-list {\
 	border: 0;\
 }\
 \
-/*RESEARCHy*/\
+/*RESEARCH*/\
 div.docs-reference-pane-container {\
 	background-color: #333333;\
 	border: 0;\
@@ -558,7 +558,7 @@ div.docs-preferencesdialog-list-body::-webkit-scrollbar-thumb {\
 	border: 0 !important;\
 }\
 \
-/*USER DICTIONARYy*/\
+/*USER DICTIONARY*/\
 div.docs-userdictionarydialog-row-container {\
 	border: 0;\
 }\
@@ -586,7 +586,7 @@ div.modal-dialog-buttons > button:hover, button.goog-buttonset-action:hover {\
 	border: 0 !important;\
 }\
 \
-/*WEBSTOREy*/\
+/*WEBSTORE*/\
 span.g-aa-ca {\
 	color: #333333;\
 	background: #696969 !important;\
@@ -619,7 +619,7 @@ div.O-j {\
 	border: 0 !important;\
 }\
 \
-/*KBSHORTCUTSy*/\
+/*KBSHORTCUTS*/\
 div.apps-shortcutshelppopup-ac-renderer {\
 	background-color: #191919 !important;\
 	border: 0 !important;\
@@ -644,21 +644,27 @@ div.apps-shortcutshelppopup-header {\
 }\
 \
 /*USERPANEL*/\
-div.gb_ob {\
+div.gb_qb {\
 	background: none !important;\
 }\
 div.gb_ga {\
 	background: #242424 !important;\
 }\
-div.gb_lb, a.gb_b, #gb div.gb_eb.gb_eb a {\
+div.gb_nb, a.gb_b, #gb div.gb_eb.gb_eb a {\
 	color: #777777 !important;\
 }\
-a.gb_nb.gb_nb {\
+a.gb_pb.gb_pb {\
 	background-color: #696969 !important;\
 	border: 0;\
 	color: #333333 !important;\
 }\
-div.gb_ab {\
+a.gb_pb.gb_pb:hover {\
+    color: #333333 !important;\
+    background-color: #f8f8f8 !important;\
+    background-image: none !important;\
+    border: 0 !important;\
+}\
+div.gb_cb {\
 	border-bottom-color: #242424 !important;\
 }\
 \
@@ -689,6 +695,16 @@ input.hsv-input {\
 	background-color: #595959 !important;\
 	border-color: gray !important;\
 }\
+/*NAVIGATION*/\
+div.docs-icon-close-thin {\
+    background-color: #777777 !important;\
+}\
+div.navigation-widget-hat {\
+    border-bottom: solid 1px #777777;\
+}\
+div.navigation-item-level-0 {\
+    color: #777777 !important;\
+}\
 \
 "
 GM_addStyle(css);
@@ -702,4 +718,5 @@ panel.insertAdjacentHTML('beforeend', av);
 Missing:
 1) Help modal
 2) Report modal
+Notify me if there's something missing/undesirable.
 */
