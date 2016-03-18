@@ -16,7 +16,7 @@ You'll need an extension for your browser to use these scripts.
 
 ###### Other sites
 - [Greasy Fork](https://greasyfork.org/en/users/29508-keyweeusr)
-- [OpenUserJS](https://openuserjs.org/users/KeyWeeUsr/scripts)
+- [OpenUserJS](https://openuserjs.org/users/KeyWeeUsr)
 
 Congratulations, now you can use the script!
 
