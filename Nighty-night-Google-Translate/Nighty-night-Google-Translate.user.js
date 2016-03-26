@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Nighty-night Google Translate
 // @namespace    https://github.com/KeyWeeUsr/Userscripts
-// @version      0.6
+// @version      0.7
 // @description  Translate at night comfortably!
 // @author       Peter Badida
 // @copyright    2016+, Peter Badida
@@ -19,29 +19,94 @@
 var css = "\
 /*TEXT*/\
 div#spelling-correction, div.gb_nb, div.gt-ex-text, span.gt-syn-span, div.goog-toolbar-button,\
-.goog-toolbar-menu-button, div.gt-revert-correct-message {color: #777777;}\
+.goog-toolbar-menu-button, div.gt-revert-correct-message {\
+    color: #777777;\
+}\
+\
+/*INPUTTOOLS*/\
+li.ita-kd-menuitem, span.ita-kd-menuitem-inputtool-name {\
+    color: #777777 !important;\
+}\
+div.ita-hwt-candidate, span.ita-kd-inputtools-div, div.ita-hwt-jfk-standard,\
+div.ita-hwt-jfk-action {\
+    color: #393939; background-image: none !important;\
+    background-color: #696969 !important; border-color: #696969;\
+}\
+div.ita-hwt-candidate-hover, div.ita-hwt-jfk-hover, div.ita-hwt-backspace:hover {\
+    background-color: #f1f1f1 !important;\
+    background-image: none !important;\
+}\
+div.ita-hwt-buttons, div.ita-hwt-candidates {\
+    border-top: 1px solid #777777 !important;\
+}\
+div.ita-hwt-buttons {\
+    background-color: #222222 !important;\
+    background: #222222 !important;\
+}\
+ul.ita-kd-dropdown-menu {\
+    background-color: #333333 !important;\
+}\
+div.ita-hwt-ime, div.ita-hwt-candidates {\
+    background-color: #696969;\
+}\
+div.ita-hwt-grip, div.ita-hwt-close {\
+    background-color: #999999 !important;\
+    opacity: 0.5;\
+}\
+div.ita-hwt-ime-st {\
+    background-color: #393939 !important;\
+    border-color: #777777;\
+}\
+button.vk-btn {\
+    color: #393939;\
+    background-image: none !important;\
+    background-color: #696969 !important;\
+    border-color: #696969;\
+}\
+button.vk-sf-h {\
+    background-color: #f1f1f1 !important;\
+    background-image: none !important;\
+}\
+div.vk-box {\
+    background-color: #333333 !important;\
+}\
 \
 /*Buttons, Inputs*/\
-li.ita-kd-menuitem, span.ita-kd-menuitem-inputtool-name, div.goog-menuitem-content, span.gt-card-ttl-txt,\
-span.gt-rw-span, div.gt-def-row, a, div.gt-baf-word-clickable, textarea#source {color: #777777 !important;}\
-div#gbqfqw, input#gbqfq, input#gt-pb-sb, button.vk-btn, div.ita-hwt-candidate,\
-span.ita-kd-inputtools-div, div.goog-flat-menu-button, div.jfk-button-standard,\
-div.ita-hwt-jfk-standard, a.gb_Ca, div.ita-hwt-jfk-action {color: #393939; background-image: none !important;\
+div.goog-menuitem-content, span.gt-card-ttl-txt,\
+span.gt-rw-span, div.gt-def-row, a, div.gt-baf-word-clickable,\
+textarea#source {color: #777777 !important;}\
+div#gbqfqw, input#gbqfq, input#gt-pb-sb, div.pbdel-button, \
+div.goog-flat-menu-button, div.jfk-button-standard,\
+a.gb_Ca {color: #393939; background-image: none !important;\
 background-color: #696969 !important; border-color: #696969;}\
 button.gbqfb {background:#696969 !important; border-color: #666666 !important;\
 color: #444444 !important;}\
-div.ita-hwt-candidate-hover, input#gt-submit:hover, button.gbqfb:hover, div.ita-hwt-jfk-hover,\
-div.goog-flat-menu-button-hover, div.jfk-button-checked, div.ita-hwt-backspace:hover\
-{background-color: #f1f1f1 !important; background-image: none !important; }\
+input#gt-submit:hover, button.gbqfb:hover, \
+div.goog-flat-menu-button-hover, div.jfk-button-checked, div.pbdel-button:hover,\
+button#gt-pb-sbt:hover {background-color: #f1f1f1 !important; background-image: none !important; }\
 \
 /*BLUE LINKS BUTTONS*/\
-button.jfk-button-action, input.jfk-button-action, div.jfk-button-action {color: #393939;\
-background-image: none !important; background-color: #696969 !important; border-color: #696969;}\
-div.jfk-button-hover {color: #393939; background-color: #f1f1f1 !important; background-image: none !important;\
-border-color: #696969;}\
-a.gb_pb {background:#696969 !important; border-color: #666666 !important;\
-color: #444444 !important;}\
-a.gb_pb:hover {background-color: #f1f1f1 !important; background-image: none !important; }\
+button.jfk-button-action, input.jfk-button-action, div.jfk-button-action {\
+    color: #393939;\
+    background-image: none !important;\
+    background-color: #696969 !important;\
+    border-color: #696969;\
+}\
+div.jfk-button-hover {\
+    color: #393939;\
+    background-color: #f1f1f1 !important;\
+    background-image: none !important;\
+    border-color: #696969;\
+}\
+a.gb_pb {\
+    background:#696969 !important;\
+    border-color: #666666 !important;\
+    color: #444444 !important;\
+}\
+a.gb_pb:hover {\
+    background-color: #f1f1f1 !important;\
+    background-image: none !important;\
+}\
 \
 /*Borders*/\
 div#gt-src-wrap {border-color: #777777 !important;}\
@@ -51,35 +116,51 @@ div.cd-exp-ar:after {border-top: 16px solid #222222;}\
 div.cd-exp-ar:before {border-top:16px solid #696969;}\
 div.gb_cb {border-bottom-color: #333333 !important;}\
 div.Kza:after, div.Kza:before {border-top-color: #666666;}\
-div.ita-hwt-buttons, div.ita-hwt-candidates {border-top: 1px solid #777777 !important;}\
+div#pb-sp-del, #gt-pb-tb, #gt-pb-tb tr {border: 0 !important;}\
+tr.nolabel {border-top: 1px solid #777777 !important;}\
 \
 /*NOTIFICATIONS*/\
-div#gbsfw {border-color: #777777 !important;}\
-div.aac {background-color: #333333 !important;}\
-div.gb_ga {background-color: #333333 !important;}\
-div.gb_qb {background-color: #222222 !important; background: #222222 !important;}\
-/*APPS*/\
-ul.gb_ja, ul.gb_ca {background-color: #333333 !important;}\
+div#gbsfw {\
+    border-color: #777777 !important;\
+}\
+div.aac {\
+    background-color: #333333 !important;\
+}\
+div.gb_ga {\
+    background-color: #333333 !important;\
+}\
+div.gb_qb {\
+    background-color: #222222 !important;\
+    background: #222222 !important;\
+}\
 \
+/*APPS*/\
+ul.gb_ja, ul.gb_ca {\
+    background-color: #333333 !important;\
+}\
 \
 /*USERPANEL*/\
-div.gb_R {background-color: #555555 !important; background: #555555 !important;}\
-div.gb_T {background-color: black !important; border: 0;}\
+div.gb_R {\
+    background-color: #555555 !important;\
+    background: #555555 !important;\
+}\
+div.gb_T {\
+    background-color: black !important;\
+    border: 0;\
+}\
 \
 /*Backgrounds*/\
-select#gt-sl, select#gt-tl, div.Kza {background-color: #555555 !important;\
+select#gt-sl, select#gt-tl, div.Kza, tr.nolabel {background-color: #555555 !important;\
 background: #555555 !important;}\
 select#gt-sl:hover, select#gt-tl:hover {background:#f8f8f8 !important;}\
 div#gt-ft-res, div.gb_Lb {background-color: black !important; border: 0;}\
 div#pb-tool, div#gt-apb-main, div#gt-appbar {background-color: black !important;\
 background: black !important; border: 0;}\
-div.MNn0h, a.gb_ka, div#gt-text-c, div#gt-text-top, body, div#gt-lc,\
-div.ita-hwt-buttons {background-color: #222222 !important; background: #222222 !important;}\
-div#pb-st-menu,div#pb-ls-menu,ul.ita-kd-dropdown-menu, div#gt-sl-gms-menu, div#gt-tl-gms-menu, div.vk-box\
-{background-color: #333333 !important;}\
-div.ita-hwt-ime, div.cd-exp-ar, div.ita-hwt-candidates {background-color: #696969;}\
-div.ita-hwt-grip, div.ita-hwt-close {background-color: #999999 !important; opacity: 0.5;}\
-div.ita-hwt-ime-st {background-color: #393939 !important; border-color: #777777;}\
+div.MNn0h, a.gb_ka, div#gt-text-c, div#gt-text-top, body,\
+div#gt-lc {background-color: #222222 !important; background: #222222 !important;}\
+div#pb-st-menu,div#pb-ls-menu, div#gt-sl-gms-menu,\
+div#gt-tl-gms-menu {background-color: #333333 !important;}\
+div.cd-exp-ar {background-color: #696969;}\
 \
 /*Miscellaneous*/\
 div.contentframe {color: inherit; background: 0; background-color: transparent;}\

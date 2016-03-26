@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Nighty-night Google Docs
 // @namespace    https://github.com/KeyWeeUsr/Userscripts
-// @version      0.8
+// @version      0.9
 // @description  Write at night comfortably!
 // @author       Peter Badida
 // @copyright    2016+, Peter Badida
@@ -211,7 +211,7 @@ div.pg-sh-Dg, div.pg-Xg, div.a-ub, div.a-ub-T, div.a-sg, div.a-sg-w, div.a-sg-v,
 div.pg-Il-Wg-Ae, input.pg-ih-w, div.pg-rg-Zb-wc {\
 	border-color: #777777 !important;\
 }\
-div.Pd-ke-ve-Oc-Kc, div.pg-hl-Wg-hl-le, input.pg-yh-Qc-qb, input.pg-ih-Qc {\
+div.Pd-ke-ve-Oc-Kc, div.pg-kl-Wg-kl-le, input.pg-yh-Qc-qb, input.pg-ih-Qc {\
 	background-color: #777777 !important;\
 	border: 0 !important;\
 }\
