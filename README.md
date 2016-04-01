@@ -1,5 +1,5 @@
 # Userscripts
-Welcome to my small script collection, I hope you'll find it useful. :)
+Welcome to my small script collection, I hope you'll find it useful. :) Userscripts for google services are updated as soon as I find something missing/wrong and fix it. I don't spend 24/7 using only these things, however, so if there's something wrong and no mention in readme or directly in script, notify me(mail/issue/...).
 ## How to install
 You'll need an extension for your browser to use these scripts.
 ##### Prerequisites
@@ -26,6 +26,15 @@ If you experienced any problems, please visit <code>Issues</code> section.
 A dark Lightroom/Photoshop CS6-like theme for Google Docs. Almost everything is adjusted to working at night. Say no more to those white eye-burning pages!
 
 <img src="https://raw.githubusercontent.com/KeyWeeUsr/Userscripts/master/Nighty-night-Google-Docs/nightynight.png" width=500></img>
+
+###### Missing stuff after Google updates
+01-04-2016
+- File -> Open: background parts of the dialog
+- Move file dialog: borders mainly
+- Insert image: url input, backgrounds
+- Research tab: buttons
+- Extensions dialog: maybe background
+- User panel: text in buttons
 ##### Nighty-night Google Translate
 Similar theme as for Google Docs making Google Translate & Google Docs a good combination for writing at night even in foreign language.
 
