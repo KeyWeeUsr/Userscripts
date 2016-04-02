@@ -22,6 +22,73 @@ div#spelling-correction, div.gb_nb, div.gt-ex-text, span.gt-syn-span, div.goog-t
 .goog-toolbar-menu-button, div.gt-revert-correct-message {\
     color: #777777;\
 }\
+a, textarea#source {\
+    color: #777777 !important;\
+}\
+\
+/*TEXT DEFINITIONS*/\
+span.gt-card-ttl-txt, div.gt-def-row, span.gt-rw-span {\
+    color: #777777 !important;\
+}\
+\
+/*TEXT TRANSLATIONS*/\
+div.gt-baf-word-clickable {\
+    color: #777777 !important;\
+}\
+\
+/*MENU*/\
+div.jfk-button-standard, div.goog-flat-menu-button {\
+    color: #393939;\
+    background-image: none !important;\
+    background-color: #696969 !important;\
+    border-color: #696969;\
+}\
+div.goog-menuitem-content {\
+    color: #777777 !important;\
+}\
+input#gt-submit:hover {\
+    background-color: #f1f1f1 !important;\
+    background-image: none !important;\
+}\
+div.jfk-button-checked, div.goog-flat-menu-button-hover, div.goog-flat-menu-button-open {\
+    background-color: #f1f1f1 !important;\
+    background-image: none !important;\
+}\
+\
+/*BLUE LINKS BUTTONS*/\
+button.jfk-button-action, input.jfk-button-action, div.jfk-button-action {\
+    color: #393939;\
+    background-image: none !important;\
+    background-color: #696969 !important;\
+    border-color: #696969;\
+}\
+div.jfk-button-hover {\
+    color: #393939;\
+    background-color: #f1f1f1 !important;\
+    background-image: none !important;\
+    border-color: #696969;\
+}\
+a.gb_pb {\
+    background:#696969 !important;\
+    border-color: #666666 !important;\
+    color: #444444 !important;\
+}\
+a.gb_pb:hover {\
+    background-color: #f1f1f1 !important;\
+    background-image: none !important;\
+}\
+\
+/*PHRASEBOOK*/\
+input#gt-pb-sb, div.pbdel-button {\
+    color: #393939;\
+    background-image: none !important;\
+    background-color: #696969 !important;\
+    border-color: #696969;\
+}\
+div.pbdel-button:hover, button#gt-pb-sbt:hover {\
+    background-color: #f1f1f1 !important;\
+    background-image: none !important;\
+}\
 \
 /*INPUTTOOLS*/\
 li.ita-kd-menuitem, span.ita-kd-menuitem-inputtool-name {\
@@ -71,53 +138,10 @@ div.vk-box {\
     background-color: #333333 !important;\
 }\
 \
-/*Buttons, Inputs*/\
-div.goog-menuitem-content, span.gt-card-ttl-txt,\
-span.gt-rw-span, div.gt-def-row, a, div.gt-baf-word-clickable,\
-textarea#source {color: #777777 !important;}\
-div#gbqfqw, input#gbqfq, input#gt-pb-sb, div.pbdel-button, \
-div.goog-flat-menu-button, div.jfk-button-standard,\
-a.gb_Ca {color: #393939; background-image: none !important;\
-background-color: #696969 !important; border-color: #696969;}\
-button.gbqfb {background:#696969 !important; border-color: #666666 !important;\
-color: #444444 !important;}\
-input#gt-submit:hover, button.gbqfb:hover, \
-div.goog-flat-menu-button-hover, div.jfk-button-checked, div.pbdel-button:hover,\
-button#gt-pb-sbt:hover {background-color: #f1f1f1 !important; background-image: none !important; }\
-\
-/*BLUE LINKS BUTTONS*/\
-button.jfk-button-action, input.jfk-button-action, div.jfk-button-action {\
-    color: #393939;\
-    background-image: none !important;\
-    background-color: #696969 !important;\
-    border-color: #696969;\
+/*APPS*/\
+ul.gb_ja, ul.gb_ca {\
+    background-color: #333333 !important;\
 }\
-div.jfk-button-hover {\
-    color: #393939;\
-    background-color: #f1f1f1 !important;\
-    background-image: none !important;\
-    border-color: #696969;\
-}\
-a.gb_pb {\
-    background:#696969 !important;\
-    border-color: #666666 !important;\
-    color: #444444 !important;\
-}\
-a.gb_pb:hover {\
-    background-color: #f1f1f1 !important;\
-    background-image: none !important;\
-}\
-\
-/*Borders*/\
-div#gt-src-wrap {border-color: #777777 !important;}\
-div#pb-tb-c, span#result_box, div#gt-res-wrap {border-color: #777777; color: #777777;\
-background: transparent !important;}\
-div.cd-exp-ar:after {border-top: 16px solid #222222;}\
-div.cd-exp-ar:before {border-top:16px solid #696969;}\
-div.gb_cb {border-bottom-color: #333333 !important;}\
-div.Kza:after, div.Kza:before {border-top-color: #666666;}\
-div#pb-sp-del, #gt-pb-tb, #gt-pb-tb tr {border: 0 !important;}\
-tr.nolabel {border-top: 1px solid #777777 !important;}\
 \
 /*NOTIFICATIONS*/\
 div#gbsfw {\
@@ -134,11 +158,6 @@ div.gb_qb {\
     background: #222222 !important;\
 }\
 \
-/*APPS*/\
-ul.gb_ja, ul.gb_ca {\
-    background-color: #333333 !important;\
-}\
-\
 /*USERPANEL*/\
 div.gb_R {\
     background-color: #555555 !important;\
@@ -148,6 +167,22 @@ div.gb_T {\
     background-color: black !important;\
     border: 0;\
 }\
+\
+\
+\
+/*sort borders & bgs into categories!*/\
+\
+\
+/*Borders*/\
+div#gt-src-wrap {border-color: #777777 !important;}\
+div#pb-tb-c, span#result_box, div#gt-res-wrap {border-color: #777777; color: #777777;\
+background: transparent !important;}\
+div.cd-exp-ar:after {border-top: 16px solid #222222;}\
+div.cd-exp-ar:before {border-top:16px solid #696969;}\
+div.gb_cb {border-bottom-color: #333333 !important;}\
+div.Kza:after, div.Kza:before {border-top-color: #666666;}\
+div#pb-sp-del, #gt-pb-tb, #gt-pb-tb tr {border: 0 !important;}\
+tr.nolabel {border-top: 1px solid #777777 !important;}\
 \
 /*Backgrounds*/\
 select#gt-sl, select#gt-tl, div.Kza, tr.nolabel {background-color: #555555 !important;\
@@ -172,6 +207,13 @@ span.gb_Pb:after {content: 'Google';}\
 div.gb_Td>.gb_R {line-height: 60px;}\
 img#kwu_av:hover {opacity: 1 !important;}\
 body.Vzc {background-color: transparent !important; background: transparent !important;}\
+\
+\
+/*TRASH?*/\
+a.gb_Ca {color: #393939; background-image: none !important; background-color: #696969 !important; border-color: #696969;}\
+div#gbqfqw, input#gbqfq {color: #393939; background-image: none !important; background-color: #696969 !important; border-color: #696969;}\
+button.gbqfb {background:#696969 !important; border-color: #666666 !important; color: #444444 !important;}\
+button.gbqfb:hover {background-color: #f1f1f1 !important; background-image: none !important; }\
 "
 GM_addStyle(css);
 var panel=document.getElementById('gt-lang-right');

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Nighty-night Google Docs
 // @namespace    https://github.com/KeyWeeUsr/Userscripts
-// @version      0.9
+// @version      1.0
 // @description  Write at night comfortably!
 // @author       Peter Badida
 // @copyright    2016+, Peter Badida
@@ -80,7 +80,7 @@ div.jfk-button-disabled{\
     background:#898989 !important;\
     background-image: none;\
 }\
-div#picker:ap:1, div.jfk-button, div.jfk-button-mini {\
+div#picker:ap:1, div.jfk-button, div.jfk-button-mini, div.picker-min-arrow-inner {\
     color: #333333 !important;\
     background-color: #696969 !important;\
     background-image: none !important;\
@@ -191,7 +191,8 @@ div.pg-rg-Zb-Ef, div.d-u-F.d-u-v, div.d-u-Q.d-u-v {\
 	box-shadow: none !important;\
 	-webkit-box-shadow: none !important;\
 }\
-div.pg-vg-Ef, div.pg-pf-Jd-qe, div.pg-rg-Zb-Ef {\
+div.pg-vg-Ef, div.Pl-pf-Jd-qe, div.Pl-Rl-Zb-Ef, div.Pl-Ul-Ef, div.Pl-Sl-hc,\
+div.Jd-Od-nc-w {\
 	background-color: #393939 !important;\
 	background-image: none;\
 	border: 0 !important;\
@@ -201,17 +202,22 @@ div.pg-vg-Ef, div.pg-pf-Jd-qe, div.pg-rg-Zb-Ef {\
 td.mg-Fc-Zf-nn-ff {\
 	border-color: #333333 !important;\
 }\
-div.a-kb {\
+div.a-kb, div.Pl-Rt-qe {\
 	background-color: #242424 !important;\
 }\
-div.pg-sh-Dg, div.pg-Xg, div.a-ub, div.a-ub-T, div.a-sg, div.a-sg-w, div.a-sg-v, label.pg-ih-Pe {\
+/*blue strip*/\
+div.Pl-Pt .Pl-Yn-ub-v .Pl-Yn-ub-tb {\
+	background-color: #242424 !important;\
+}\
+div.pg-sh-Dg, div.pg-Xg, div.a-ub, div.a-ub-T, div.a-qk, div.a-qk-w, div.a-qk-v,\
+label.Pl-Fm-Pe {\
 	color: #777777 !important;\
 	border-color: #777777 !important;\
 }\
-div.pg-Il-Wg-Ae, input.pg-ih-w, div.pg-rg-Zb-wc {\
+.Pl-fr-tm-E .Pl-fr-tm-Ae, input.pg-ih-w, div.pg-rg-Zb-wc {\
 	border-color: #777777 !important;\
 }\
-div.Pd-ke-ve-Oc-Kc, div.pg-kl-Wg-kl-le, input.pg-yh-Qc-qb, input.pg-ih-Qc {\
+div.Pd-ke-ve-Oc-Kc, div.Pl-Eq-tm-Eq-le, input.Pl-Vm-Qc-qb, input.Pl-Fm-Qc {\
 	background-color: #777777 !important;\
 	border: 0 !important;\
 }\
@@ -226,14 +232,14 @@ div.Pd-ke-he-f-Kc {\
 div.picker.modal-dialog {\
 	border:0;\
 }\
-div.Jd-ue-Je-Nf Jd-Be-Ce {\
+div.Pl-Ql-pf Pl-Rl-Zb-Ef {\
 	border-bottom: 2px solid #777777 !important;\
 }\
 div.Pd-ke-he-cb-Kc {\
 	background-color: #595959 !important;\
 	border: 0;\
 }\
-div.oe-pe-td .Jd-If-pe-Kc {\
+div.oe-pe-td .Jd-If-pe-Kc, div.oe-pe-Qb .Jd-If-pe-Kc {\
 	background-color: #595959 !important;\
 	border: 0;\
 }\
@@ -488,8 +494,8 @@ div.docs-reference-pane-container {\
 div.goog-sa-pane-search {\
 	background-color: #393939;\
 }\
-div.goog-sa-searchbox-fwd-button.jfk-button-disabled, div.goog-sa-searchbox-back-button, \
-div.goog-sa-searchbox-back-button.jfk-button-disabled, div.goog-sa-searchbox-fwd-button, \
+div.goog-sa-searchbox-back-button.jfk-button-disabled, div.goog-sa-searchbox-back-button, \
+div.goog-sa-searchbox-fwd-button.jfk-button-disabled, div.goog-sa-searchbox-fwd-button, \
 div.goog-sa-searchbox.goog-sa-component-online .goog-sa-searchbox-selectormenu, {\
 	background-color: #898989 !important;\
 	background: #898989 !important;\
@@ -651,7 +657,7 @@ div.gb_ga {\
 	background: #242424 !important;\
 }\
 div.gb_nb, a.gb_b, #gb div.gb_eb.gb_eb a {\
-	color: #777777 !important;\
+	color: #888888 !important;\
 }\
 a.gb_pb.gb_pb {\
 	background-color: #696969 !important;\
