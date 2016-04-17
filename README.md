@@ -27,9 +27,26 @@ A dark Lightroom/Photoshop CS6-like theme for Google Docs. Almost everything is 
 
 <img src="https://raw.githubusercontent.com/KeyWeeUsr/Userscripts/master/Nighty-night-Google-Docs/nightynight.png" width=500></img>
 
-###### Missing stuff after Google updates
-- Move file dialog: borders
-- Research tab: buttons(style is bypassed somehow)
+###### Missing stuff
+not/bad implemented or missing after Google updates
+- Toolbar
+  - menu selected color
+  - search input(Alt + /) dropdown color
+- File
+  - share -> email address dropdown color
+  - open -> borders, selected item, email dropdown color, message focus borders, checkbox color
+- Insert
+  - image -> button color
+- Tools
+  - research -> icons(style is bypassed somehow)
+  - phrasebook -> button font color
+- Apps
+  - dropdown category
+- Help
+  - help docs
+  - report problem
+  - keyboard shortcuts -> focus borders, dropdown color
+
 
 ##### Nighty-night Google Translate
 Similar theme as for Google Docs making Google Translate & Google Docs a good combination for writing at night even in foreign language.
