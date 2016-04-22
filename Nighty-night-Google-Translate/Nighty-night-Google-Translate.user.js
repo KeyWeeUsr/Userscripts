@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Nighty-night Google Translate
 // @namespace    https://github.com/KeyWeeUsr/Userscripts
-// @version      0.9
+// @version      1.0
 // @description  Translate at night comfortably!
 // @author       Peter Badida
 // @copyright    2016+, Peter Badida
@@ -19,28 +19,28 @@
 var css = "\
 /*TOOLBAR*/\
 div#gt-apb-main, div#gt-appbar {\
-    background-color: black !important;\
-    background: black !important;\
+    background-color: #191919 !important;\
+    background: #191919 !important;\
     border: 0;\
 }\
-span.gb_Pb {\
+span.gb_Qb {\
     background-image: none;\
     display: inline !important;\
     left:-10px;\
 }\
-span.gb_Pb:after {\
+span.gb_Qb:after {\
     content: 'Google';\
 }\
-a.gb_Nb {\
+a.gb_Ob {\
     text-decoration: none;\
     font-size: 250%;\
 }\
-div.gb_Td>.gb_R {\
+div.gb_je>.gb_R {\
     line-height: 60px;\
 }\
 \
 /*TEXT*/\
-div#spelling-correction, div.gb_nb, div.gt-ex-text, span.gt-syn-span,\
+div#spelling-correction, div.gb_ob, div.gt-ex-text, span.gt-syn-span,\
 div.goog-toolbar-button, .goog-toolbar-menu-button,\
 div.gt-revert-correct-message {\
     color: #777777;\
@@ -77,8 +77,10 @@ div.goog-menuitem-content {\
     color: #777777 !important;\
 }\
 div.goog-menuitem-highlight {\
-    background-color: #f1f1f1 !important;\
-    border-color: #f1f1f1 !important;\
+    background-color: #e0e0e0 !important;\
+}\
+#gt-tl-gms-menu .goog-menuitem-group .goog-menuitem-highlight {\
+    border: 1px solid transparent !important;\
 }\
 div.goog-menuitem-emphasize-highlight {\
     background-color: #595959 !important;\
@@ -99,8 +101,8 @@ div#gt-sl-gms-menu, div#gt-tl-gms-menu {\
 }\
 \
 /*BACKGROUNDS*/\
-div.gb_Lb, div#gt-ft-res {\
-    background-color: black !important;\
+div.gb_Mb, div#gt-ft-res {\
+    background-color: #111111 !important;\
     border: 0;\
 }\
 body, div#gt-text-c, div#gt-text-top, div#gt-lc {\
@@ -124,6 +126,9 @@ span#result_box, div#gt-res-wrap {\
     color: #777777;\
     background: transparent !important;\
 }\
+.goog-toolbar-menu-button-focused, .goog-flat-menu-button-focused {\
+    border: 1px solid transparent !important;\
+}\
 \
 /*BLUE LINKS BUTTONS*/\
 button.jfk-button-action, input.jfk-button-action, div.jfk-button-action {\
@@ -138,15 +143,6 @@ div.jfk-button-hover {\
     background-image: none !important;\
     border-color: #696969;\
 }\
-a.gb_pb {\
-    background:#696969 !important;\
-    border-color: #666666 !important;\
-    color: #444444 !important;\
-}\
-a.gb_pb:hover {\
-    background-color: #f1f1f1 !important;\
-    background-image: none !important;\
-}\
 \
 /*PHRASEBOOK*/\
 input#gt-pb-sb, div.pbdel-button {\
@@ -160,24 +156,24 @@ div.pbdel-button:hover, button#gt-pb-sbt:hover {\
     background-image: none !important;\
 }\
 div#pb-tool {\
-    background-color: black !important;\
-    background: black !important;\
+    background-color: #252525 !important;\
+    background: #252525 !important;\
     border: 0;\
 }\
 div#pb-st-menu, div#pb-ls-menu {\
     background-color: #333333 !important;\
 }\
 tr.nolabel {\
-    background-color: #555555 !important;\
-    background: #555555 !important;\
+    background-color: #333333 !important;\
+    background: #333333 !important;\
     border-top: 1px solid #777777 !important;\
 }\
 div#pb-sp-del, #gt-pb-tb, #gt-pb-tb tr {\
     border: 0 !important;\
 }\
-div#pb-tb-c{\
+div#pb-tb-c, table#gt-pb-tb{\
     border-color: #777777;\
-    color: #777777;\
+    color: #777777 !important;\
     background: transparent !important;\
 }\
 \
@@ -237,9 +233,18 @@ a.gb_ka {\
     background-color: #222222 !important;\
     background: #222222 !important;\
 }\
+span.gb_la {\
+    border-bottom: 1px solid #777777 !important;\
+}\
 div.MNn0h {\
     background-color: #222222 !important;\
     background: #222222 !important;\
+}\
+.gb_Z:hover:not(.gb_0) a {\
+    border: 1px solid #595959 !important;\
+}\
+.gb_Z:hover .gb_4 {\
+    background: #595959 !important;\
 }\
 \
 /*NOTIFICATIONS*/\
@@ -256,10 +261,6 @@ div.aac {\
 div.gb_ga {\
     background-color: #333333 !important;\
 }\
-div.gb_qb {\
-    background-color: #222222 !important;\
-    background: #222222 !important;\
-}\
 div.Kza {\
     background-color: #555555 !important;\
     background: #555555 !important;\
@@ -274,8 +275,21 @@ div.gb_R {\
     background: #555555 !important;\
 }\
 div.gb_T {\
-    background-color: black !important;\
+    background-color: #111111 !important;\
     border: 0;\
+}\
+a.gb_qb {\
+    background:#696969 !important;\
+    border-color: #666666 !important;\
+    color: #444444 !important;\
+}\
+a.gb_qb:hover {\
+    background-color: #f1f1f1 !important;\
+    background-image: none !important;\
+}\
+div.gb_rb {\
+    background-color: #222222 !important;\
+    background: #222222 !important;\
 }\
 \
 /*SHARE*/\
@@ -303,7 +317,7 @@ div.cd-exp-ar:before {\
 div.jfk-bubble-arrowimplafter {\
     border-color: #777777 transparent !important;\
 }\
-div.gb_cb {\
+div.gb_db {\
     border-bottom-color: #333333 !important;\
 }\
 \
@@ -315,6 +329,9 @@ div.contentframe {\
 }\
 div#t-new-user {\
     display: none;\
+}\
+div.gt-baf-sep {\
+    border-bottom: 1px solid #777777 !important;\
 }\
 img#kwu_av:hover {\
     opacity: 1 !important;\
