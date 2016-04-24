@@ -385,7 +385,8 @@ div.docos-streamdocoview-inputcontainer, div.docos-overflowmenu-vertical, \
 div.docos-actionmenu-vertical {\
 	background-color: #494949 !important;\
 }\
-div.docos-anchoredreplyview-author {\
+div.docos-anchoredreplyview-author, div.docos-streamdocoview-authorname, \
+div.docos-streamdocoview-body, span.docos-streamreplyview-body, span.docos-replyview-quote {\
 	color: #777777 !important;\
 }\
 div.docos-docoview-reopen, div.docos-docoview-comment, div.docos-docoview-resolve, \
