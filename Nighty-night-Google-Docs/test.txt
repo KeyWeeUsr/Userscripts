@@ -1,0 +1,121 @@
+TEST
+
+User Panel                                                                      _____
+    buttons                                                                         1
+    change profile picture                                                          1
+    arrow                                                                           1    
+Toolbar                                                                         _____
+    rulers                                                                          1
+    same background                                                                 1
+    buttons                                                                         1
+    buttons:hover                                                                   1
+    menu color                                                                      1
+    menu text color                                                                 1
+    menu disabled color                                                             1
+    menu selected color                                                             1
+    color picker                                                                    1
+    Search the menus(Alt + /) same color as other dropdowns                         1
+File                                                                            _____
+    Share                                                                         ___  
+        email address dropdown color                                                1
+        privileges dropdown color                                                   1
+        background                                                                  1
+        text & checkboxes                                                           1
+    Open                                                                          ___
+        text                                                                        1
+        inputs                                                                      1
+        buttons                                                                     1
+        dropdowns                                                                   1
+        background                                                                  1
+        grid items(bg, border, text, hover, selected)                               1
+        list items(bg, border, text, hover, selected, sort panel)                   1
+    Organise                                                                      ___
+        text                                                                        1
+        input                                                                       1
+        buttons                                                                     1
+        borders                                                                     1
+        backgrounds                                                                 1
+        item(selected, hover)                                                       1
+        arrow                                                                       0
+    Revision history                                                              ___
+        toolbar                                                                     1
+        items(bg, border, text, hover, selected)                                    1
+    Publish to the web                                                            ___
+        tabs                                                                        1
+        text                                                                        1
+        buttons                                                                     1
+        checkbox                                                                    1
+    Email as attachment                                                           ___
+        text                                                                        1
+        buttons                                                                     1
+        checkbox                                                                    1
+        email dropdown color                                                        1
+        message focus borders                                                       1
+        checkbox color                                                              1
+    Page setup                                                                    ___
+        text                                                                        1
+        buttons                                                                     1
+        radiobuttons                                                                1
+        dropdown color                                                              1
+Edit                                                                            _____
+    Find, Find and replace(Ctrl H)                                                ___
+        button color                                                                1
+        borders                                                                     1
+        checkboxes                                                                  1
+View                                                                            _____
+    Mode                                                                            1
+    Equation toolbar                                                                1
+    Compact controls                                                                1
+Insert                                                                          _____
+    Image                                                                         ___
+        align(click)                                                                1
+    Link                                                                          ___
+        button color                                                                1
+    Equation                                                                        1
+    Drawing                                                                       ___
+        buttons                                                                     1
+        toolbar color(lighter?)                                                     1
+    Table(background)                                                               1
+    Comments                                                                      ___
+        add                                                                         1
+        toolbar                                                                     1
+        arrow                                                                       1
+    Special characters                                                              1
+    Bookmark                                                                        1
+    Header/Footer                                                                   1
+Format                                                                          _____
+    Alt text(image)                                                                 1
+    Crop(image)                                                                     1
+    Image options                                                                   1
+Tools                                                                           _____
+    Spelling                                                                        1
+    Research                                                                        1
+        icons                                                                       0
+    Define                                                                          1
+        icons                                                                       0
+    Word count                                                                      1
+    Translate document                                                              1
+    Preferences                                                                   ___
+        text                                                                        1
+        borders                                                                     1
+        buttons                                                                     1
+        checkboxes                                                                  1
+    Personal dictionary                                                           ___
+        button font color                                                           1
+Table                                                                           _____
+    Properties                                                                    ___
+        text                                                                        1
+        buttons                                                                     1
+        dropdowns                                                                   1
+        checkboxes                                                                  1
+Add-ons                                                                         _____
+    Get add-ons                                                                   ___
+        dropdown category                                                           1
+Help                                                                            _____
+    Docs Help                                                                       0
+    Report a problem                                                                0
+    Keyboard shortcuts                                                            ___
+        focus borders                                                               1
+        dropdown color                                                              1
+Right click dropdown                                                                1
+Offline circle                                                                      1

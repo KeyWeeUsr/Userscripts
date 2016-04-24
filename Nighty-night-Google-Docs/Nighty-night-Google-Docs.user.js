@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Nighty-night Google Docs
 // @namespace    https://github.com/KeyWeeUsr/Userscripts
-// @version      1.0
+// @version      1.1
 // @description  Write at night comfortably!
 // @author       Peter Badida
 // @copyright    2016+, Peter Badida
@@ -20,9 +20,12 @@
 'use strict';
 
 (function () {
-var css = "\
+var maincss = "\
 img#kwu_av:hover {opacity: 1 !important;}\
 \
+*:focus {\
+    outline: none;\
+}\
 /*TOOLBAR*/\
 div#docs-chrome, div#docs-toolbar-wrapper, div#docs-title-widget div.goog-inline-block, \
 div.goog-toolbar {\
@@ -32,6 +35,10 @@ div.goog-toolbar {\
     border: 0;\
     box-shadow: none;\
 }\
+div.goog-control-hover, div.goog-control-open {\
+    background: #444444 !important;\
+    border-color: #444444 !important;\
+}\
 div#docs-branding-container.docs-branding-documents {\
     background-color: #242424 !important;\
     background: #242424;\
@@ -40,7 +47,7 @@ div.docs-icon-folder-solid {\
     background-color: #696969 !important;\
 }\
 div.jfk-activityIndicator-circle {\
-    background-color: #696969;\
+    background-color: #696969 !important;\
 }\
 div#docs-toolbar {\
     background-color: #191919 !important;\
@@ -63,11 +70,16 @@ div.goog-toolbar-combo-button {\
 div#boldButton, div#undoButton, div#redoButton, div#printButton, div#formatPainterButton, \
 div#underlineButton, div#textColorButton, div#insertLinkButton, div#insertCommentButton, \
 div#alignLeftButton, div#alignCenterButton, div#alignRightButton, div#alignJustifyButton, \
-div#addNumberedBulletButton, div#addBulletButton, div#bulletListPresetButton, div#outdentButton, \
-div#indentButton, div#clearFormattingButtonButton, div#viewModeButton {\
+div#addNumberedBulletButton, div#addBulletButton, div#bulletListPresetButton, div#outdentButton, div#indentButton, div#clearFormattingButtonButton, div#viewModeButton {\
     background-color: #696969 !important;\
     border: 0;\
     color: #333333 !important;\
+}\
+div.goog-menuitem.docs-submenuitem {\
+    border: 0 !important;\
+}\
+div.jfk-button.docs-submenuitem-splitbutton, div.jfk-button.docs-submenuitem-splitbutton:hover {\
+    background-color: #242424 !important;\
 }\
 \
 /*BUTTONS*/\
@@ -80,7 +92,8 @@ div.jfk-button-disabled{\
     background:#898989 !important;\
     background-image: none;\
 }\
-div#picker:ap:1, div.jfk-button, div.jfk-button-mini, div.picker-min-arrow-inner {\
+div#picker:ap:1, div.jfk-button, div.jfk-button-mini, \
+div#docs-chrome > div > div > div > div > div > div > div > div > div {\
     color: #333333 !important;\
     background-color: #696969 !important;\
     background-image: none !important;\
@@ -106,7 +119,7 @@ div.goog-toolbar-combo-button-hover, div.goog-flat-menu-button-hover {\
     background-color: #f8f8f8 !important;\
     background-image: none !important;\
 }\
-div.jfk-button-standard{\
+div.jfk-button-standard {\
     background-color:#696969;\
     background-image: none;\
     border: 0 !important;\
@@ -116,10 +129,11 @@ div.jfk-button-standard{\
 div.goog-menuseparator {\
 	border:0;\
 }\
-div.goog-menuitem {\
+div.goog-menuitem, .goog-option-selected .goog-menuitem-content {\
 	color: #777777 !important;\
 }\
-div.goog-menuitem-disabled > div > span, div.goog-menuitem-disabled > div >.goog-menuitem-accel {\
+div.goog-menuitem-disabled > div > span, \
+div.goog-menuitem-disabled > div >.goog-menuitem-accel {\
 	color: #494949 !important;\
 }\
 div#docs-menu-shield, div.goog-menu-vertical {\
@@ -176,75 +190,10 @@ a.simple-sharing-link-sharing-learn-more, span.vpc-change-link {\
 	color: #777777 !important;\
 }\
 \
-/*MODAL OPEN IMAGE*/\
-div.d-u-F, div.d-u-Q {\
-	color: #333333 !important;\
-	background-color: #696969 !important;\
-	background-image: none;\
-	border: 0 !important;\
-}\
-div.pg-rg-Zb-Ef, div.d-u-F.d-u-v, div.d-u-Q.d-u-v {\
-	color: #333333 !important;\
-	background-color: #f8f8f8 !important;\
-	background-image: none;\
-	border: 0 !important;\
-	box-shadow: none !important;\
-	-webkit-box-shadow: none !important;\
-}\
-div.pg-vg-Ef, div.Pl-pf-Jd-qe, div.Pl-Rl-Zb-Ef, div.Pl-Ul-Ef, div.Pl-Sl-hc,\
-div.Jd-Od-nc-w {\
-	background-color: #393939 !important;\
-	background-image: none;\
-	border: 0 !important;\
-	box-shadow: none !important;\
-	-webkit-box-shadow: none !important;\
-}\
-td.mg-Fc-Zf-nn-ff {\
-	border-color: #333333 !important;\
-}\
-div.a-kb, div.Pl-Rt-qe {\
-	background-color: #242424 !important;\
-}\
-/*blue strip*/\
-div.Pl-Pt .Pl-Yn-ub-v .Pl-Yn-ub-tb {\
-	background-color: #242424 !important;\
-}\
-div.pg-sh-Dg, div.pg-Xg, div.a-ub, div.a-ub-T, div.a-qk, div.a-qk-w, div.a-qk-v,\
-label.Pl-Fm-Pe {\
-	color: #777777 !important;\
-	border-color: #777777 !important;\
-}\
-.Pl-fr-tm-E .Pl-fr-tm-Ae, input.pg-ih-w, div.pg-rg-Zb-wc {\
-	border-color: #777777 !important;\
-}\
-div.Pd-ke-ve-Oc-Kc, div.Pl-Eq-tm-Eq-le, input.Pl-Vm-Qc-qb, input.Pl-Fm-Qc {\
-	background-color: #777777 !important;\
-	border: 0 !important;\
-}\
-div.pg-eb-Kc {\
-	color: #777777 !important;\
-	border: 0 !important;\
-}\
-div.Pd-ke-he-f-Kc {\
-	background-color: #595959 !important;\
-	color: #777777;\
-}\
+/*MODAL FILE BROWSER*/\
 div.picker.modal-dialog {\
 	border:0;\
 }\
-div.Pl-Ql-pf Pl-Rl-Zb-Ef {\
-	border-bottom: 2px solid #777777 !important;\
-}\
-div.Pd-ke-he-cb-Kc {\
-	background-color: #595959 !important;\
-	border: 0;\
-}\
-div.oe-pe-td .Jd-If-pe-Kc, div.oe-pe-Qb .Jd-If-pe-Kc {\
-	background-color: #595959 !important;\
-	border: 0;\
-}\
-\
-/*MODAL FILE BROWSER*/\
 div.goog-tree-root {\
 	border: 0 !important;\
 }\
@@ -263,7 +212,7 @@ div.docs-revisions-default-color {\
 	background-color: #222222 !important;\
 }\
 div#docs-revisions-sidebar {\
-	background-color: #555555 !important;\
+	background-color: #333333 !important;\
 	border-left: 0;\
 }\
 div#docs-revisions-sidebar-header {\
@@ -273,13 +222,13 @@ div#docs-revisions-sidebar-header {\
 div.docs-revisions-tile {\
 	border: 0;\
 }\
-span.docs-revisions-tile-link {\
+span.docs-revisions-tile-link, span.docs-revisions-tile-timestamp {\
 	color: #777777 !important;\
 }\
 div.docs-revisions-tile-selected {\
 	background-color: #424242 !important;\
 }\
-div.goog-sa-pane-inner {\
+div.goog-sa-pane-inner, div.docs-revisions-tile-hover {\
 	background-color: #242424 !important;\
 	background: #242424;\
 }\
@@ -364,11 +313,18 @@ div.goog-dimension-picker-unhighlighted {\
 \
 /*COMPACT TOOLBAR*/\
 div.ac-renderer {\
-	background-color: #191919 !important;\
+	background-color: #333333 !important;\
 	border: 0 !important;\
+    color: #888888 !important;\
+}\
+div.ac-active {\
+    background-color: #242424 !important;\
+}\
+div.goog-menuitem-content {\
+    color: #777777 !important;\
 }\
 div.goog-menuitem-highlight {\
-	background: #696969 !important;\
+	background: #242424 !important;\
 	border: 0;\
 }\
 \
@@ -399,14 +355,16 @@ div.docs-bubble, span.docs-bubble-link, div.jfk-bubble {\
 }\
 div.docs-link-insertlinkbubble-suggestionholder, div.docs-link-linksuggestiongroup {\
 	background-color: #333333 !important;\
-	border: 0 !important}\
+	border: 0 !important;\
+}\
 div.jfk-bubble-arrowimplbefore, div.jfk-bubble-arrowimplafter {\
 	border-color: #333333 transparent !important;\
 }\
 \
 /*COMMENTS*/\
 div.docos-anchoreddocoview-arrow-outer, div.docos-anchoreddocoview-arrow-inner {\
-	border-right: 20px solid #393939 !important}\
+	border-right: 20px solid #393939 !important;\
+}\
 div.docos-streampane-content, div.docos-streampane-header {\
 	border:0;\
 	background-color:#333333;\
@@ -428,11 +386,13 @@ div.docos-actionmenu-vertical {\
 	background-color: #494949 !important;\
 }\
 div.docos-anchoredreplyview-author {\
-	color: #777777 !important}\
-div.docos-docoview-reopen, div.docos-docoview-comment, div.docos-docoview-resolve,  \
+	color: #777777 !important;\
+}\
+div.docos-docoview-reopen, div.docos-docoview-comment, div.docos-docoview-resolve, \
 div.docos-replyview-edit, div.docos-replyview-edit:hover, div.docos-replyview-delete, \
 div.docos-replyview-delete:hover, div.docos-showrepliesbutton-collapsed {\
-	color: #777777 !important}\
+	color: #777777 !important;\
+}\
 div.docos-anchoredreplyview, div.docos-anchoreddocoview-input-pane, div.docos-showrepliesbutton {\
 	background-color: #393939 !important;\
 	background: #393939 !important;\
@@ -444,10 +404,10 @@ textarea.docos-input-textarea {\
 div.docos-anchoredreplyview, div.docos-showrepliesbutton {\
 	border-bottom-color: #595959 !important;\
 }\
-div.docos-anchoredreplyview .docos-anchoredreplyview-body {\
+div.docos-anchoredreplyview .docos-anchoredreplyview-body, div.docos-streamreplyview-author {\
 	color: #777777 !important;\
 }\
-div.docs-docos-caret-outer, div.docs-docos-caret-inner {\
+div.docs-docos-caret-outer, div.docos-enable-new-header>.docs-docos-caret-inner {\
 	border-color: #333333 transparent !important;\
 }\
 \
@@ -496,7 +456,7 @@ div.goog-sa-pane-search {\
 }\
 div.goog-sa-searchbox-back-button.jfk-button-disabled, div.goog-sa-searchbox-back-button, \
 div.goog-sa-searchbox-fwd-button.jfk-button-disabled, div.goog-sa-searchbox-fwd-button, \
-div.goog-sa-searchbox.goog-sa-component-online .goog-sa-searchbox-selectormenu, {\
+div.goog-sa-searchbox.goog-sa-component-online .goog-sa-searchbox-selectormenu {\
 	background-color: #898989 !important;\
 	background: #898989 !important;\
 	border: 1px solid #777777 !important;\
@@ -569,7 +529,7 @@ div.docs-userdictionarydialog-row-container {\
 	border: 0;\
 }\
 div.docs-userdictionarydialog-row-container:hover {\
-	background: #696969 !important;\
+	background: #242424 !important;\
 	border: 0;\
 }\
 div.docs-userdictionarydialog-list-container {\
@@ -592,42 +552,9 @@ div.modal-dialog-buttons > button:hover, button.goog-buttonset-action:hover {\
 	border: 0 !important;\
 }\
 \
-/*WEBSTORE*/\
-span.g-aa-ca {\
-	color: #333333;\
-	background: #696969 !important;\
-	background-color: #696969 !important;\
-	border: 0 !important;\
-	background-image: none !important;\
-}\
-span.g-aa-ca-l {\
-	background-color: #f8f8f8 !important;\
-	background-image: none !important;\
-	border: 0 !important;\
-}\
-div.a-d-Ec {\
-	background-color: #696969 !important;\
-	border: 0 !important;\
-}\
-div.webstore-widget {\
-	color:#777777;\
-	background: #393939 !important;\
-	background-color: #393939 !important;\
-	border-bottom: 0 !important;\
-}\
-input.h-n-j-Qc-lc {\
-	color: #777777 !important;\
-	background-color: #595959 !important;\
-	border: 0;\
-}\
-div.O-j {\
-	background-color: #494949 !important;\
-	border: 0 !important;\
-}\
-\
 /*KBSHORTCUTS*/\
 div.apps-shortcutshelppopup-ac-renderer {\
-	background-color: #191919 !important;\
+	background-color: #333333 !important;\
 	border: 0 !important;\
 }\
 h3.apps-shortcutshelppopup-search-label, h3.apps-shortcutshelppopup-content-header, \
@@ -644,33 +571,34 @@ td.apps-shortcutshelppopup-content-element, a.apps-shortcutshelppopup-help-cente
 }\
 div.apps-shortcutshelppopup{\
 	background-color:#242424 !important;\
+    box-shadow: none;\
 }\
-div.apps-shortcutshelppopup-header {\
+div.apps-shortcutshelppopup-header, div.apps-shortcutshelppopup-container {\
 	border: 0 !important;\
 }\
 \
 /*USERPANEL*/\
-div.gb_qb {\
-	background: none !important;\
-}\
 div.gb_ga {\
 	background: #242424 !important;\
 }\
-div.gb_nb, a.gb_b, #gb div.gb_eb.gb_eb a {\
+div#gb > div > div > div > div > div > div {\
+	background: none !important;\
+}\
+div#gb > div > div > div > div > div > div > div > div, a.gb_b {\
 	color: #888888 !important;\
 }\
-a.gb_pb.gb_pb {\
+div#gb > div > div > div > div > div > div > div > a {\
 	background-color: #696969 !important;\
 	border: 0;\
 	color: #333333 !important;\
 }\
-a.gb_pb.gb_pb:hover {\
+div#gb > div > div > div > div > div > div > div > a:hover {\
     color: #333333 !important;\
     background-color: #f8f8f8 !important;\
     background-image: none !important;\
     border: 0 !important;\
 }\
-div.gb_cb {\
+div#gb > div > div > div > div > div > div {\
 	border-bottom-color: #242424 !important;\
 }\
 \
@@ -691,10 +619,11 @@ input.docs-title-input {\
 	border: 0;\
 	box-shadow: none;\
 }\
-textarea.jfk-textinput, input.jfk-textinput, input.jfk-textinput:focus, div.inviter-recipient-area {\
+textarea.jfk-textinput, textarea.jfk-textinput:focus, input.jfk-textinput, input.jfk-textinput:focus, div.inviter-recipient-area {\
 	background-color: #595959 !important;\
 	border: 0;\
 	color: #333333 !important;\
+    outline: none;\
 }\
 input.hsv-input {\
 	color: #333333 !important;\
@@ -712,17 +641,188 @@ div.navigation-item-level-0 {\
     color: #777777 !important;\
 }\
 \
-"
-GM_addStyle(css);
-var panel=document.body;
-var av='<div style="position: absolute; left: 48.5vw; top: 1vh;"><a \
+/*CONTAINERS*/\
+div.webstore-widget {\
+	color:#777777;\
+	background: #393939 !important;\
+	background-color: #393939 !important;\
+	border-bottom: 0 !important;\
+}\
+\
+";
+var webstorecss = "\
+/*WEBSTORE*/\
+*:focus {\
+    outline: none;\
+}\
+body > div > div > div > div > span[role=button] {\
+	color: #777777;\
+	background: #696969 !important;\
+	background-color: #696969 !important;\
+	border: 0 !important;\
+	background-image: none !important;\
+}\
+body > div > div > div > div > div > div > div > div > a > div > div {\
+	background-color: #696969 !important;\
+	border: 0 !important;\
+}\
+body > div > div > div > div > div > input#searchbox-input {\
+	color: #777777 !important;\
+	background-color: #595959 !important;\
+	border: 0;\
+}\
+body > div > div > div {\
+	background-color: #333333 !important;\
+	border: 0 !important;\
+}\
+body > div > div > div > div > div[role=listbox] {\
+    background: #333333 !important;\
+}\
+body > div > div > div > div > span[role=button]:hover {\
+	background-color: #f8f8f8 !important;\
+	background-image: none !important;\
+	border: 0 !important;\
+}\
+body > div > div > div > div > div > div > div > div > div {\
+	color: #777777 !important;\
+}\
+body > div > div > div > div > div > div:hover {\
+	background-color: #e3e3e3 !important;\
+	background-image: none !important;\
+	border: 0 !important;\
+}\
+\
+";
+var opencss = "\
+/*MODAL OPEN*/\
+*:focus {\
+    outline: none;\
+}\
+body {\
+    background-color: #393939 !important;\
+}\
+div[role=button] {\
+	color: #333333 !important;\
+	background-color: #696969 !important;\
+	background-image: none;\
+	border: 0 !important;\
+}\
+div[role=button]:hover {\
+	color: #333333 !important;\
+	background-color: #f8f8f8 !important;\
+	background-image: none;\
+	border: 0 !important;\
+	box-shadow: none !important;\
+	-webkit-box-shadow: none !important;\
+}\
+div#doclist > div > div > div > div > div > div > div > div > div > div > div[role=listbox], \
+div#doclist > div > div > div > div > div+div > div > div > div > div, div[role=menu] {\
+	background-color: #393939 !important;\
+}\
+div#doclist > div > div > div > div > div > div > div > div+div, \
+div#doclist > div > div > div > div > div > div > div > div > div > div+div, input {\
+	background-color: #393939 !important;\
+    border-color: #777777 !important;\
+    color: #777777 !important;\
+}\
+div[role=tab], div[role=heading], div[role=status] {\
+	color: #777777 !important;\
+	border-color: #777777 !important;\
+}\
+div#doclist > div > div > div > div > div {\
+	background-color: #393939 !important;\
+	background-image: none;\
+	border: 0 !important;\
+	box-shadow: none !important;\
+	-webkit-box-shadow: none !important;\
+}\
+div[role=option] > div, div[role=option] > div > div, \
+div#doclist > div > div > div > div > div > div > div > div > div > div > div > div\
+> div > div > div > div > div > div+div {\
+	background-color: #696969 !important;\
+	border: 0 !important;\
+}\
+div#doclist > div > div > div > div > div > div > div > div > div > div > div > div\
+> div > div > div > div+div {\
+    background-color: #696969 !important;\
+    border:0 !important;\
+}\
+div#doclist > div > div > div > div > div > div > div > div > div > label, \
+div[role=menuitem] > div, div[role=menuitemradio] > div {\
+	color: #777777 !important;\
+	border: 0 !important;\
+}\
+div[role=presentation] > div[role=option] {\
+    background-color: none !important;\
+}\
+\
+";
+var movecss = "\
+*:focus {\
+    outline: none;\
+}\
+div[role=button] {\
+	color: #333333 !important;\
+	background-color: #696969 !important;\
+	background-image: none;\
+	border: 0 !important;\
+}\
+div[role=button]:hover {\
+	color: #333333 !important;\
+	background-color: #f8f8f8 !important;\
+	background-image: none;\
+	border: 0 !important;\
+	box-shadow: none !important;\
+	-webkit-box-shadow: none !important;\
+}\
+input {\
+	background-color: #393939 !important;\
+    border-color: #777777 !important;\
+    color: #777777 !important;\
+}\
+div#doclist > div > div+div > div {\
+    background-color: #393939 !important;\
+}\
+div[role=heading], div[role=status] {\
+	color: #777777 !important;\
+	border-color: #777777 !important;\
+}\
+div[role=menuitem] > div > div, div[role=menuitem] > div > div > a {\
+    color: #777777 !important;\
+}\
+div[role=menu], div[role=menuitem] > div, div[role=menuitem] > div > div+div+div > div {\
+	background-color: #393939 !important;\
+}\
+div[role=menuitem]>div:hover, div[role=menuitem] > div > div+div+div > div:hover {\
+	background-color: #242424 !important;\
+}\
+div[role=group] {\
+    border-color: #777777 !important;\
+}\
+\
+";
+if (/webstore/i.test(window.location.href)) {
+    GM_addStyle(webstorecss);
+} else if (/picker.*?kix-fileopen/i.test(window.location.href)) {
+    GM_addStyle(opencss);
+} else if (/picker.*?kix-move/i.test(window.location.href)) {
+    GM_addStyle(movecss);
+} else if (/picker.*?profilePhoto=true/i.test(window.location.href)) {
+    GM_addStyle(opencss);
+} else {
+    GM_addStyle(maincss);
+    var panel=document.body;
+    var av='<div style="position: absolute; left: 48.5vw; top: 1vh;"><a \
 href="https://github.com/KeyWeeUsr/Userscripts"><img id="kwu_av" style="opacity: 0.3;"\
 src="https://github.com/identicons/KeyWeeUsr.png" width="24"></img></a></div>';
-panel.insertAdjacentHTML('beforeend', av);
+    panel.insertAdjacentHTML('beforeend', av);
+}
 })();
 /*
 Missing:
-1) Help modal
-2) Report modal
+1) File -> Organise -> arrow, borders
+2) Tools -> Define&Research -> icons
+3) Docs Help
+4) Report a problem
 Notify me if there's something missing/undesirable.
 */
