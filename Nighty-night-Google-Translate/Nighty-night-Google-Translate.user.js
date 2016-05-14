@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Nighty-night Google Translate
 // @namespace    https://github.com/KeyWeeUsr/Userscripts
-// @version      1.0
+// @version      1.1
 // @description  Translate at night comfortably!
 // @author       Peter Badida
 // @copyright    2016+, Peter Badida
@@ -67,7 +67,8 @@ span.gt-baf-hl {\
 }\
 \
 /*MENU*/\
-div.jfk-button-standard, div.goog-flat-menu-button {\
+div.jfk-button-standard, div.jfk-button-standard:focus,\
+div.goog-flat-menu-button {\
     color: #393939;\
     background-image: none !important;\
     background-color: #696969 !important;\
@@ -76,23 +77,24 @@ div.jfk-button-standard, div.goog-flat-menu-button {\
 div.goog-menuitem-content {\
     color: #777777 !important;\
 }\
-div.goog-menuitem-highlight {\
-    background-color: #e0e0e0 !important;\
-}\
-#gt-tl-gms-menu .goog-menuitem-group .goog-menuitem-highlight {\
-    border: 1px solid transparent !important;\
+div.goog-menuitem-highlight,\
+div#gt-sl-gms-menu .goog-menuitem-group .goog-menuitem-highlight,\
+div#gt-tl-gms-menu .goog-menuitem-group .goog-menuitem-highlight {\
+    background-color: #222222 !important;\
+    border-color: #222222 !important;\
 }\
 div.goog-menuitem-emphasize-highlight {\
-    background-color: #595959 !important;\
+    background-color: #222222 !important;\
 }\
 div.goog-option-selected {\
-    background-color: #595959 !important;\
+    background-color: #222222 !important;\
 }\
 input#gt-submit:hover {\
     background-color: #f1f1f1 !important;\
     background-image: none !important;\
 }\
-div.jfk-button-checked, div.goog-flat-menu-button-hover, div.goog-flat-menu-button-open {\
+div.jfk-button-checked, div.goog-flat-menu-button-hover,\
+div.goog-flat-menu-button-open {\
     background-color: #f1f1f1 !important;\
     background-image: none !important;\
 }\
@@ -116,9 +118,16 @@ select#gt-sl, select#gt-tl {\
 select#gt-sl:hover, select#gt-tl:hover {\
     background:#f8f8f8 !important;\
 }\
+div.gt-is {\
+    background-color: #333333;\
+    border-style: none;\
+}\
+div.gt-is-itm-hover {\
+    background-color: #222222;\
+}\
 \
 /*BORDERS*/\
-div#gt-src-wrap {\
+div#gt-src-wrap, div.goog-menuseparator {\
     border-color: #777777 !important;\
 }\
 span#result_box, div#gt-res-wrap {\
@@ -186,9 +195,14 @@ div.ita-hwt-jfk-standard, div.ita-hwt-jfk-action {\
     color: #393939; background-image: none !important;\
     background-color: #696969 !important; border-color: #696969;\
 }\
-div.ita-hwt-candidate-hover, div.ita-hwt-jfk-hover, div.ita-hwt-backspace:hover {\
+div.ita-hwt-candidate-hover, div.ita-hwt-jfk-hover,\
+div.ita-hwt-backspace:hover {\
     background-color: #f1f1f1 !important;\
     background-image: none !important;\
+}\
+li.ita-kd-menuitem-hover {\
+    background-color: #222222 !important;\
+    color: #222 !important;\
 }\
 div.ita-hwt-buttons, div.ita-hwt-candidates {\
     border-top: 1px solid #777777 !important;\
