@@ -29,11 +29,16 @@ File                                                                            
         background                                                                  1
         grid items(bg, border, text, hover, selected)                               1
         list items(bg, border, text, hover, selected, sort panel)                   1
+        My disk                                                                     1
+        Shared with me                                                              1
+        Star                                                                        1
+        All                                                                         0
+        Upload                                                                      1
     Organise                                                                      ___
         text                                                                        1
         input                                                                       1
         buttons                                                                     1
-        borders                                                                     1
+        borders                                                                     0
         backgrounds                                                                 1
         item(selected, hover)                                                       1
         arrow                                                                       0
@@ -93,6 +98,7 @@ Tools                                                                           
         icons                                                                       0
     Define                                                                          1
         icons                                                                       0
+        borders                                                                     0
     Word count                                                                      1
     Translate document                                                              1
     Preferences                                                                   ___
