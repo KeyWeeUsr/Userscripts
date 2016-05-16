@@ -1,15 +1,17 @@
 // ==UserScript==
 // @name         Nighty-night Google Translate
 // @namespace    https://github.com/KeyWeeUsr/Userscripts
-// @version      1.1
+// @version      1.2
 // @description  Translate at night comfortably!
 // @author       Peter Badida
 // @copyright    2016+, Peter Badida
 // @license      GNU GPLv3
 // @homepage     https://github.com/KeyWeeUsr/Userscripts/tree/master/Nighty-night-Google-Translate
 // @supportURL   https://github.com/KeyWeeUsr/Userscripts/issues
+// @icon         https://translate.google.com/favicon.ico
 // @include      https://*translate.google.*/*
 // @include      https://plus.google.*/u/0/_/notifications/frame*origin=https%3A%2F%2Ftranslate.google.*
+// @contributionURL https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ACVM74AYCXVWQ
 // @grant        GM_addStyle
 // ==/UserScript==
 /* jshint -W097 */
@@ -42,7 +44,7 @@ div.gb_je>.gb_R {\
 /*TEXT*/\
 div#spelling-correction, div.gb_ob, div.gt-ex-text, span.gt-syn-span,\
 div.goog-toolbar-button, .goog-toolbar-menu-button,\
-div.gt-revert-correct-message {\
+div.gt-revert-correct-message, span#gt-feedback-caption {\
     color: #777777;\
 }\
 a, textarea#source {\
@@ -127,7 +129,7 @@ div.gt-is-itm-hover {\
 }\
 \
 /*BORDERS*/\
-div#gt-src-wrap, div.goog-menuseparator {\
+div#gt-src-wrap, div.goog-menuseparator, div.goog-toolbar-separator {\
     border-color: #777777 !important;\
 }\
 span#result_box, div#gt-res-wrap {\
@@ -255,10 +257,10 @@ div.MNn0h {\
     background: #222222 !important;\
 }\
 .gb_Z:hover:not(.gb_0) a {\
-    border: 1px solid #595959 !important;\
+    border: 1px solid #222222 !important;\
 }\
 .gb_Z:hover .gb_4 {\
-    background: #595959 !important;\
+    background: #222222 !important;\
 }\
 \
 /*NOTIFICATIONS*/\
