@@ -1,16 +1,18 @@
 // ==UserScript==
 // @name         Top Repos
 // @namespace    https://github.com/KeyWeeUsr/Userscripts
-// @version      0.2
+// @version      0.3
 // @description  Show star-ordered user's repositories in "Popular repositories"
 // @author       Peter Badida
 // @copyright    2016+, Peter Badida
 // @license      GNU GPLv3
 // @homepage     https://github.com/KeyWeeUsr/Userscripts/tree/master/TopRepos
 // @supportURL   https://github.com/KeyWeeUsr/Userscripts/issues
+// @icon         https://assets-cdn.github.com/favicon.ico
 // @include      https://github.com/*
 // @require      http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js
 // @require      https://raw.githubusercontent.com/KeyWeeUsr/Userscripts/master/TopRepos/emoji.js
+// @contributionURL https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ACVM74AYCXVWQ
 // @grant        GM_addStyle
 // ==/UserScript==
 /* jshint -W097 */
@@ -118,6 +120,9 @@ function createHtml(item) {
     newItem.childNodes[1].childNodes[3].childNodes[1].innerHTML = item[1];
     newItem.childNodes[1].childNodes[7].innerHTML = emojify(item[2]);
     newItem.childNodes[1].href = item[3];
+    if (!item[2]) {
+        newItem.childNodes[1].childNodes[5].style.marginTop = '6px';
+    }
     box.appendChild(newItem);
 }
 
