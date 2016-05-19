@@ -1,19 +1,21 @@
 // ==UserScript==
 // @name         Nighty-night Google Docs
 // @namespace    https://github.com/KeyWeeUsr/Userscripts
-// @version      1.1
+// @version      1.2
 // @description  Write at night comfortably!
 // @author       Peter Badida
 // @copyright    2016+, Peter Badida
 // @license      GNU GPLv3
 // @homepage     https://github.com/KeyWeeUsr/Userscripts/tree/master/Nighty-night-Google-Docs
 // @supportURL   https://github.com/KeyWeeUsr/Userscripts/issues
+// @icon         https://www.google.com/docs/about/favicon.ico
 // @include      https://*docs.google.*/document/*
 // @include      https://*docs.google.*/sharing/*
 // @include      https://*docs.google.*/e/organize*
 // @include      https://*docs.google.*/picker*
 // @include      https://*docs.google.*/drawings/*
 // @include      https://*.google.*/webstore/wall/widget?container=GOOGLE_DOCUMENT*ref=https%3A%2F%2Fdocs.google.*
+// @contributionURL https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ACVM74AYCXVWQ
 // @grant        GM_addStyle
 // ==/UserScript==
 /* jshint -W097 */
@@ -749,7 +751,8 @@ div#doclist > div > div > div > div > div > div > div > div > div > div > div > 
     border:0 !important;\
 }\
 div#doclist > div > div > div > div > div > div > div > div > div > label, \
-div[role=menuitem] > div, div[role=menuitemradio] > div {\
+div[role=menuitem] > div, div[role=menuitemradio] > div, \
+a.picker-actionpane-notice-link {\
 	color: #777777 !important;\
 	border: 0 !important;\
 }\
@@ -804,7 +807,8 @@ div[role=group] {\
 ";
 if (/webstore/i.test(window.location.href)) {
     GM_addStyle(webstorecss);
-} else if (/picker.*?kix-fileopen/i.test(window.location.href)) {
+} else if (/picker.*?kix-fileopen/i.test(window.location.href) ||
+          (/picker.*?kix&/i.test(window.location.href))) {
     GM_addStyle(opencss);
 } else if (/picker.*?kix-move/i.test(window.location.href)) {
     GM_addStyle(movecss);
