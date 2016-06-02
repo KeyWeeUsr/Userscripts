@@ -27,7 +27,10 @@ You'll need an extension for your browser to use these scripts.
 
 Congratulations, now you can use the script!
 
-If you experienced any problems, please visit <code>Issues</code> section.
+If you experienced any problems, please visit <code>Issues</code> section. If
+a script doesn't work in Opera, read [this](
+https://dev.opera.com/extensions/architecture-overview/) - `eval()` is used to
+access files in this repository such as `emoji.js`.
 ## Gallery
 ##### <img src="https://www.google.sk/docs/about/favicon.ico" width=16></img>&nbsp;Nighty-night Google Docs
 A dark Lightroom/Photoshop CS6-like theme for Google Docs. Almost everything is
@@ -58,6 +61,13 @@ popular repos easier than going through `Sources` on `Repositories` tab which
 shows the user's repos unordered.
 
 <img src="https://raw.githubusercontent.com/KeyWeeUsr/Userscripts/master/TopRepos/toprepos.png" width=500></img>
+
+##### <img src="https://assets-cdn.github.com/favicon.ico" width=16></img>&nbsp;CopyCode
+CopyCode for GitHub allows you to simply click on a button and copy whole
+code-block to your clipboard. If clipboard fails (Safari, or old browser maybe)
+the text still remains selected, so you can copy the content manually anyway.
+
+<img src="https://raw.githubusercontent.com/KeyWeeUsr/Userscripts/master/CopyCode/copycode.png" width=500></img>
 
 ---
 

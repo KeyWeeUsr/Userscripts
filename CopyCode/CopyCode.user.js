@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GitHub CopyCode
 // @namespace    https://github.com/KeyWeeUsr/Userscripts
-// @version      0.1
+// @version      0.2
 // @description  Copy content of a code-block everywhere on GitHub
 // @author       Peter Badida
 // @copyright    2016+, Peter Badida
@@ -77,6 +77,14 @@
         });
         $('.gh-header-actions').append(av);
     }
-    addButtons();
-    appendMe();
+
+    function run() {
+        if (!document.getElementById('kwu_av')){
+            addButtons();
+            appendMe();
+        } else {
+            clearInterval(runCheck);
+        }
+    }
+    var runCheck = setInterval(run, 250)
 })();
