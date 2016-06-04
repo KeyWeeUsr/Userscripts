@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         GitHub TopRepos
+// @name         Top Repos
 // @namespace    https://github.com/KeyWeeUsr/Userscripts
 // @version      0.4
 // @description  Show star-ordered user's repositories in "Popular repositories"
