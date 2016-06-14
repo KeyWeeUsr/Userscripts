@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Nighty-night Google Translate
 // @namespace    https://github.com/KeyWeeUsr/Userscripts
-// @version      1.2
+// @version      1.3
 // @description  Translate at night comfortably!
 // @author       Peter Badida
 // @copyright    2016+, Peter Badida
@@ -25,27 +25,26 @@ div#gt-apb-main, div#gt-appbar {\
     background: #191919 !important;\
     border: 0;\
 }\
-span.gb_Qb {\
+div#gb > div > div+div > div > a > span ,span.gb_Qb {\
     background-image: none;\
     display: inline !important;\
-    left:-10px;\
 }\
-span.gb_Qb:after {\
+div#gb > div > div+div > div > a > span:after {\
     content: 'Google';\
 }\
-a.gb_Ob {\
+div#gb > div > div+div > div > a {\
     text-decoration: none;\
-    font-size: 250%;\
+    font-size: 200%;\
 }\
 div.gb_je>.gb_R {\
     line-height: 60px;\
 }\
 \
 /*TEXT*/\
-div#spelling-correction, div.gb_ob, div.gt-ex-text, span.gt-syn-span,\
+div#spelling-correction, div.gt-ex-text, span.gt-syn-span,\
 div.goog-toolbar-button, .goog-toolbar-menu-button,\
 div.gt-revert-correct-message, span#gt-feedback-caption {\
-    color: #777777;\
+    color: #777777 !important;\
 }\
 a, textarea#source {\
     color: #777777 !important;\
@@ -192,10 +191,16 @@ div#pb-tb-c, table#gt-pb-tb{\
 li.ita-kd-menuitem, span.ita-kd-menuitem-inputtool-name {\
     color: #777777 !important;\
 }\
-div.ita-hwt-candidate, span.ita-kd-inputtools-div,\
+span.ita-kd-inputtools-div {\
+    color: #393939; background-image: none !important;\
+    background-color: transparent !important;\
+    border-color: #696969;\
+}\
+div.ita-hwt-candidate, div.ita-hwt-backspace,\
 div.ita-hwt-jfk-standard, div.ita-hwt-jfk-action {\
     color: #393939; background-image: none !important;\
-    background-color: #696969 !important; border-color: #696969;\
+    background-color: #777777 !important;\
+    border-color: #696969;\
 }\
 div.ita-hwt-candidate-hover, div.ita-hwt-jfk-hover,\
 div.ita-hwt-backspace:hover {\
@@ -219,8 +224,14 @@ ul.ita-kd-dropdown-menu {\
 div.ita-hwt-ime, div.ita-hwt-candidates {\
     background-color: #696969;\
 }\
-div.ita-hwt-grip, div.ita-hwt-close {\
-    background-color: #999999 !important;\
+div.ita-hwt-close {\
+    background-color: #393939 !important;\
+}\
+div.ita-hwt-grip {\
+    opacity: 0.1;\
+}\
+div.ita-hwt-grip:hover, div.ita-hwt-close:hover {\
+    background-color: #696969 !important;\
     opacity: 0.5;\
 }\
 div.ita-hwt-ime-st {\
@@ -269,7 +280,7 @@ body.Vzc {\
     background: transparent !important;\
 }\
 div#gbsfw {\
-    border-color: #777777 !important;\
+    border-color: transparent !important;\
 }\
 div.aac {\
     background-color: #333333 !important;\
@@ -286,26 +297,33 @@ div.Kza:after, div.Kza:before {\
 }\
 \
 /*USERPANEL*/\
+div#gb > div > div > div+div > div+div+div+div > div+div > div > div > div {\
+    color: #777777 !important;\
+}\
 div.gb_R {\
     background-color: #555555 !important;\
     background: #555555 !important;\
 }\
-div.gb_T {\
+div#gb > div >div {\
     background-color: #111111 !important;\
     border: 0;\
 }\
-a.gb_qb {\
+div#gb > div > div > div+div > div+div+div+div > div+div > div > div > a {\
     background:#696969 !important;\
     border-color: #666666 !important;\
     color: #444444 !important;\
 }\
-a.gb_qb:hover {\
+div#gb > div > div > div+div > div+div+div+div > div+div > div > div\
+ > a:hover {\
     background-color: #f1f1f1 !important;\
     background-image: none !important;\
 }\
-div.gb_rb {\
+div#gb > div > div > div+div > div+div+div+div > div+div > div+div+a+div {\
     background-color: #222222 !important;\
     background: #222222 !important;\
+}\
+div#gb > div > div > div+div > div+div+div+div > div+div > div > a:focus {\
+    outline: none;\
 }\
 \
 /*SHARE*/\
@@ -333,7 +351,8 @@ div.cd-exp-ar:before {\
 div.jfk-bubble-arrowimplafter {\
     border-color: #777777 transparent !important;\
 }\
-div.gb_db {\
+div#gb > div > div > div+div > div+div+div+div > div > div+div,\
+div#gb > div > div > div+div > div+div > div > a+div+div {\
     border-bottom-color: #333333 !important;\
 }\
 \
