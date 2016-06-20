@@ -60,6 +60,10 @@ user's repositories ordered by star count. The script makes finding the real
 popular repos easier than going through `Sources` on `Repositories` tab which
 shows the user's repos unordered.
 
+_**No longer maintained due to GitHub's new ["Pinned repositories"](https://github.com/blog/2191-pin-repositories-to-your-github-profile)**_
+
+The script still works if you have no pinned repos set.
+
 <img src="https://raw.githubusercontent.com/KeyWeeUsr/Userscripts/master/TopRepos/toprepos.png" width=500></img>
 
 ##### <img src="https://assets-cdn.github.com/favicon.ico" width=16></img>&nbsp;CopyCode
