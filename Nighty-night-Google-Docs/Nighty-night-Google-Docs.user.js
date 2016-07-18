@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Nighty-night Google Docs
 // @namespace    https://github.com/KeyWeeUsr/Userscripts
-// @version      1.2
+// @version      1.3
 // @description  Write at night comfortably!
 // @author       Peter Badida
 // @copyright    2016+, Peter Badida
@@ -29,8 +29,8 @@ img#kwu_av:hover {opacity: 1 !important;}\
     outline: none;\
 }\
 /*TOOLBAR*/\
-div#docs-chrome, div#docs-toolbar-wrapper, div#docs-title-widget div.goog-inline-block, \
-div.goog-toolbar {\
+div#docs-chrome, div#docs-toolbar-wrapper, \
+div#docs-title-widget div.goog-inline-block, div.goog-toolbar {\
     color: #777777 !important;\
     background-color: #0c0c0c !important;\
     background-image: none !important;\
@@ -41,7 +41,7 @@ div.goog-control-hover, div.goog-control-open {\
     background: #444444 !important;\
     border-color: #444444 !important;\
 }\
-div#docs-branding-container.docs-branding-documents {\
+div#docs-branding-container.docs-branding-documents, div.goog-button-hover {\
     background-color: #242424 !important;\
     background: #242424;\
 }\
@@ -69,10 +69,13 @@ div.goog-toolbar-separator{\
 div.goog-toolbar-combo-button {\
     background: #696969 !important;\
 }\
-div#boldButton, div#undoButton, div#redoButton, div#printButton, div#formatPainterButton, \
-div#underlineButton, div#textColorButton, div#insertLinkButton, div#insertCommentButton, \
-div#alignLeftButton, div#alignCenterButton, div#alignRightButton, div#alignJustifyButton, \
-div#addNumberedBulletButton, div#addBulletButton, div#bulletListPresetButton, div#outdentButton, div#indentButton, div#clearFormattingButtonButton, div#viewModeButton {\
+div#boldButton, div#undoButton, div#redoButton, div#printButton, \
+div#formatPainterButton, div#underlineButton, div#textColorButton, \
+div#insertLinkButton, div#insertCommentButton, div#alignLeftButton, \
+div#alignCenterButton, div#alignRightButton, div#alignJustifyButton, \
+div#addNumberedBulletButton, div#addBulletButton, div#bulletListPresetButton, \
+div#outdentButton, div#indentButton, div#clearFormattingButtonButton, \
+div#viewModeButton {\
     background-color: #696969 !important;\
     border: 0;\
     color: #333333 !important;\
@@ -80,7 +83,8 @@ div#addNumberedBulletButton, div#addBulletButton, div#bulletListPresetButton, di
 div.goog-menuitem.docs-submenuitem {\
     border: 0 !important;\
 }\
-div.jfk-button.docs-submenuitem-splitbutton, div.jfk-button.docs-submenuitem-splitbutton:hover {\
+div.jfk-button.docs-submenuitem-splitbutton, \
+div.jfk-button.docs-submenuitem-splitbutton:hover {\
     background-color: #242424 !important;\
 }\
 \
@@ -144,7 +148,8 @@ div#docs-menu-shield, div.goog-menu-vertical {\
 }\
 \
 /*MODAL SHARE*/\
-div.modal-dialog, div.modal-dialog-title, div.modal-dialog-content, div.modal-dialog-bg {\
+div.modal-dialog, div.modal-dialog-title, div.modal-dialog-content, \
+div.modal-dialog-bg {\
 	color:#777777;\
 	background: #393939 !important;\
 	background-color: #393939 !important;\
@@ -172,14 +177,16 @@ div.inviter-role-area > div.goog-flat-menu-button {\
 div.ia-invite-controls-area {\
 	background-color: #393939 !important;\
 }\
-div.link-management-select, div.jfk-button-action, button.simple-sharing-primary-button {\
+div.link-management-select, div.jfk-button-action, \
+button.simple-sharing-primary-button {\
 	color: #333333;\
 	background: #696969 !important;\
 	background-color: #696969 !important;\
 	border: 0 !important;\
 	background-image: none !important;\
 }\
-div.inviter-role-area > div.goog-flat-menu-button-hover, div.link-management-select:hover {\
+div.inviter-role-area > div.goog-flat-menu-button-hover, \
+div.link-management-select:hover {\
 	background-color: #f8f8f8 !important;\
 	background-image: none !important;\
 	border: 0 !important;\
@@ -187,8 +194,9 @@ div.inviter-role-area > div.goog-flat-menu-button-hover, div.link-management-sel
 div.link-management-url-container {\
 	border-color: #696969 !important;\
 }\
-td.vs-learn-more-text > a, a.ap-learn-more-link, div.share-fmb, div.vs-info-text > a, \
-a.simple-sharing-link-sharing-learn-more, span.vpc-change-link {\
+td.vs-learn-more-text > a, a.ap-learn-more-link, div.share-fmb, \
+div.vs-info-text > a, a.simple-sharing-link-sharing-learn-more, \
+span.vpc-change-link {\
 	color: #777777 !important;\
 }\
 \
@@ -289,8 +297,8 @@ td.kix-documentmetricsdialog-row {\
 }\
 \
 /*FIND-REPLACE*/\
-div.kix-findselectionprovider-underlay-match, div.kix-findandreplaceoverlayprovider-match, \
-div.kix-selection-overlay {\
+div.kix-findselectionprovider-underlay-match, \
+div.kix-findandreplaceoverlayprovider-match, div.kix-selection-overlay {\
 	background-color: #444444 !important;\
 	border-color: #444444;\
 }\
@@ -331,8 +339,8 @@ div.goog-menuitem-highlight {\
 }\
 \
 /*IMAGE*/\
-div.goog-slider-thumb, div.docs-rotationhandle-stick, div.docs-rotationhandle-circle, \
-div.docs-squarehandleselectionbox-handle{\
+div.goog-slider-thumb, div.docs-rotationhandle-stick, \
+div.docs-rotationhandle-circle, div.docs-squarehandleselectionbox-handle{\
 	background-color: #777777;\
 	background-image: none;\
 }\
@@ -355,7 +363,8 @@ div.docs-bubble, span.docs-bubble-link, div.jfk-bubble {\
 	background-color:#333333;\
 	color: #666666 !important;\
 }\
-div.docs-link-insertlinkbubble-suggestionholder, div.docs-link-linksuggestiongroup {\
+div.docs-link-insertlinkbubble-suggestionholder, \
+div.docs-link-linksuggestiongroup {\
 	background-color: #333333 !important;\
 	border: 0 !important;\
 }\
@@ -364,7 +373,8 @@ div.jfk-bubble-arrowimplbefore, div.jfk-bubble-arrowimplafter {\
 }\
 \
 /*COMMENTS*/\
-div.docos-anchoreddocoview-arrow-outer, div.docos-anchoreddocoview-arrow-inner {\
+div.docos-anchoreddocoview-arrow-outer, \
+div.docos-anchoreddocoview-arrow-inner {\
 	border-right: 20px solid #393939 !important;\
 }\
 div.docos-streampane-content, div.docos-streampane-header {\
@@ -372,7 +382,8 @@ div.docos-streampane-content, div.docos-streampane-header {\
 	background-color:#333333;\
 	color: #666666 !important;\
 }\
-div.docos-streampane-header .docos-new-comment-button, div.docos-streampane-header jfk-button {\
+div.docos-streampane-header .docos-new-comment-button, \
+div.docos-streampane-header jfk-button {\
 	background-color: #696969;\
 	color: #333333 !important;\
 }\
@@ -382,21 +393,23 @@ div.docs-docos-activitybox {\
 div.docos-streamdocoview {\
 	border-top-color: #595959 !important;\
 }\
-div.docos-streamrootreplyview, div.docos-streamrootreplyview:hover, div.docos-streamreplyview, \
-div.docos-streamdocoview-inputcontainer, div.docos-overflowmenu-vertical, \
-div.docos-actionmenu-vertical {\
+div.docos-streamrootreplyview, div.docos-streamrootreplyview:hover, \
+div.docos-streamreplyview, div.docos-streamdocoview-inputcontainer, div.docos-overflowmenu-vertical, div.docos-actionmenu-vertical {\
 	background-color: #494949 !important;\
 }\
 div.docos-anchoredreplyview-author, div.docos-streamdocoview-authorname, \
-div.docos-streamdocoview-body, span.docos-streamreplyview-body, span.docos-replyview-quote {\
+div.docos-streamdocoview-body, span.docos-streamreplyview-body, \
+span.docos-replyview-quote {\
 	color: #777777 !important;\
 }\
-div.docos-docoview-reopen, div.docos-docoview-comment, div.docos-docoview-resolve, \
-div.docos-replyview-edit, div.docos-replyview-edit:hover, div.docos-replyview-delete, \
+div.docos-docoview-reopen, div.docos-docoview-comment, \
+div.docos-docoview-resolve, div.docos-replyview-edit, \
+div.docos-replyview-edit:hover, div.docos-replyview-delete, \
 div.docos-replyview-delete:hover, div.docos-showrepliesbutton-collapsed {\
 	color: #777777 !important;\
 }\
-div.docos-anchoredreplyview, div.docos-anchoreddocoview-input-pane, div.docos-showrepliesbutton {\
+div.docos-anchoredreplyview, div.docos-anchoreddocoview-input-pane, \
+div.docos-showrepliesbutton {\
 	background-color: #393939 !important;\
 	background: #393939 !important;\
 	color: #777777 !important;\
@@ -407,16 +420,18 @@ textarea.docos-input-textarea {\
 div.docos-anchoredreplyview, div.docos-showrepliesbutton {\
 	border-bottom-color: #595959 !important;\
 }\
-div.docos-anchoredreplyview .docos-anchoredreplyview-body, div.docos-streamreplyview-author {\
+div.docos-anchoredreplyview .docos-anchoredreplyview-body, \
+div.docos-streamreplyview-author {\
 	color: #777777 !important;\
 }\
-div.docs-docos-caret-outer, div.docos-enable-new-header>.docs-docos-caret-inner {\
+div.docos-enable-new-header>.docs-docos-caret-inner, \
+div.docs-docos-caret-outer {\
 	border-color: #333333 transparent !important;\
 }\
 \
 /*SPECIAL CHARS*/\
-div.ita-cp-search, div.ita-cp-search.ita-cp-focus, div.ita-cp-hwt, input.ita-cp-input, \
-input.label-input-label {\
+div.ita-cp-search, div.ita-cp-search.ita-cp-focus, div.ita-cp-hwt, \
+input.ita-cp-input, input.label-input-label {\
 	background-color: #777777 !important;\
 	border-color: #777777 !important;\
 }\
@@ -457,8 +472,10 @@ div.docs-reference-pane-container {\
 div.goog-sa-pane-search {\
 	background-color: #393939;\
 }\
-div.goog-sa-searchbox-back-button.jfk-button-disabled, div.goog-sa-searchbox-back-button, \
-div.goog-sa-searchbox-fwd-button.jfk-button-disabled, div.goog-sa-searchbox-fwd-button, \
+div.goog-sa-searchbox-back-button.jfk-button-disabled, \
+div.goog-sa-searchbox-back-button, \
+div.goog-sa-searchbox-fwd-button.jfk-button-disabled, \
+div.goog-sa-searchbox-fwd-button, \
 div.goog-sa-searchbox.goog-sa-component-online .goog-sa-searchbox-selectormenu {\
 	background-color: #898989 !important;\
 	background: #898989 !important;\
@@ -469,16 +486,19 @@ div.goog-sa-searchbox-container, div.goog-sa-searchbox-selectormenu {\
 	border-color: #777777 !important;\
 	background-color: #595959 !important;\
 }\
-div.goog-sa-settings-controls, div.goog-sa-settings-toggle-content, div.goog-sa-pane-search {\
+div.goog-sa-settings-controls, div.goog-sa-settings-toggle-content, \
+div.goog-sa-pane-search {\
 	border-color: #777777 !important;\
 }\
-div.goog-sa-welcome-content>a, div.goog-sa-snippet-title-link, div.goog-sa-component-active, \
-.goog-sa-personal.goog-sa-component-active.goog-sa-component-online .goog-sa-snippet-title-link, \
-.goog-sa-personal .goog-sa-snippet-title-link, div.goog-sa-pane-title, \
-.goog-sa-content.goog-sa-common-heading .goog-sa-content-link {\
+div.goog-sa-welcome-content>a, div.goog-sa-snippet-title-link, \
+div.goog-sa-component-active, .goog-sa-personal.goog-sa-component-active.goog-sa-component-online \
+.goog-sa-snippet-title-link, .goog-sa-personal .goog-sa-snippet-title-link, \
+div.goog-sa-pane-title, .goog-sa-content.goog-sa-common-heading \
+.goog-sa-content-link {\
 	color: #777777 !important;\
 }\
-div.goog-sa-previewpane-closestrip, div.goog-sa-previewpane, div.goog-sa-pane-attribution {\
+div.goog-sa-previewpane-closestrip, div.goog-sa-previewpane, \
+div.goog-sa-pane-attribution {\
 	background-color: #393939 !important;\
 	border-color: #777777 !important;\
 }\
@@ -498,7 +518,7 @@ div.goog-sa-scrollfloater > div {\
 	background-color: #393939 !important;\
 	border-color: #777777 !important;\
 }\
-a.goog-sa-common-heading, .goog-sa-content-link, a.goog-sa-snippet-title-link, \
+a.goog-sa-common-heading, .goog-sa-content-link, a.goog-sa-snippet-title-link,\
 a.goog-sa-snippet-title-link:hover, a.goog-sa-link {\
 	color: #777777 !important;\
 	text-decoration: underline !important;\
@@ -560,7 +580,8 @@ div.apps-shortcutshelppopup-ac-renderer {\
 	background-color: #333333 !important;\
 	border: 0 !important;\
 }\
-h3.apps-shortcutshelppopup-search-label, h3.apps-shortcutshelppopup-content-header, \
+h3.apps-shortcutshelppopup-search-label, \
+h3.apps-shortcutshelppopup-content-header, \
 h2.apps-shortcutshelppopup-dialog-title {\
 	color: #777777 !important;\
 }\
@@ -568,7 +589,8 @@ table.apps-shortcutshelppopup-content {\
 	background-color: #393939;\
 	color: #757575 !important;\
 }\
-td.apps-shortcutshelppopup-content-element, a.apps-shortcutshelppopup-help-center-link {\
+td.apps-shortcutshelppopup-content-element, \
+a.apps-shortcutshelppopup-help-center-link {\
 	color: #757575 !important;\
 	border: 0;\
 }\
@@ -718,12 +740,15 @@ div[role=button]:hover {\
 	box-shadow: none !important;\
 	-webkit-box-shadow: none !important;\
 }\
-div#doclist > div > div > div > div > div > div > div > div > div > div > div[role=listbox], \
-div#doclist > div > div > div > div > div+div > div > div > div > div, div[role=menu] {\
+div#doclist > div > div > div > div > div > div > div > \
+div > div > div > div[role=listbox], \
+div#doclist > div > div > div > div > div+div > div > \
+div > div > div, div[role=menu] {\
 	background-color: #393939 !important;\
 }\
 div#doclist > div > div > div > div > div > div > div > div+div, \
-div#doclist > div > div > div > div > div > div > div > div > div > div+div, input {\
+div#doclist > div > div > div > div > div > div > div > div > div > div+div, \
+input {\
 	background-color: #393939 !important;\
     border-color: #777777 !important;\
     color: #777777 !important;\
@@ -732,7 +757,7 @@ div[role=tab], div[role=heading], div[role=status] {\
 	color: #777777 !important;\
 	border-color: #777777 !important;\
 }\
-div#doclist > div > div > div > div > div {\
+div#doclist > div > div > div > div > div, div[target=layout] {\
 	background-color: #393939 !important;\
 	background-image: none;\
 	border: 0 !important;\
@@ -740,13 +765,13 @@ div#doclist > div > div > div > div > div {\
 	-webkit-box-shadow: none !important;\
 }\
 div[role=option] > div, div[role=option] > div > div, \
-div#doclist > div > div > div > div > div > div > div > div > div > div > div > div\
-> div > div > div > div > div > div+div {\
+div#doclist > div > div > div > div > div > div > div > div > div > div > \
+div > div > div > div > div > div > div > div+div {\
 	background-color: #696969 !important;\
 	border: 0 !important;\
 }\
-div#doclist > div > div > div > div > div > div > div > div > div > div > div > div\
-> div > div > div > div+div {\
+div#doclist > div > div > div > div > div > div > div > div > div > div > \
+div > div > div > div > div > div+div {\
     background-color: #696969 !important;\
     border:0 !important;\
 }\
@@ -794,10 +819,12 @@ div[role=heading], div[role=status] {\
 div[role=menuitem] > div > div, div[role=menuitem] > div > div > a {\
     color: #777777 !important;\
 }\
-div[role=menu], div[role=menuitem] > div, div[role=menuitem] > div > div+div+div > div {\
+div[role=menu], div[role=menuitem] > div, div[role=menuitem] > div > \
+div+div+div > div {\
 	background-color: #393939 !important;\
 }\
-div[role=menuitem]>div:hover, div[role=menuitem] > div > div+div+div > div:hover {\
+div[role=menuitem]>div:hover, div[role=menuitem] > div > div+div+div > \
+div:hover {\
 	background-color: #242424 !important;\
 }\
 div[role=group] {\
