@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Nighty-night Google Docs
 // @namespace    https://github.com/KeyWeeUsr/Userscripts
-// @version      1.3
+// @version      1.4
 // @description  Write at night comfortably!
 // @author       Peter Badida
 // @copyright    2016+, Peter Badida
@@ -340,7 +340,7 @@ div.goog-menuitem-highlight {\
 \
 /*IMAGE*/\
 div.goog-slider-thumb, div.docs-rotationhandle-stick, \
-div.docs-rotationhandle-circle, div.docs-squarehandleselectionbox-handle{\
+div.docs-rotationhandle-circle, div.docs-squarehandleselectionbox-handle {\
 	background-color: #777777;\
 	background-image: none;\
 }\
@@ -394,7 +394,8 @@ div.docos-streamdocoview {\
 	border-top-color: #595959 !important;\
 }\
 div.docos-streamrootreplyview, div.docos-streamrootreplyview:hover, \
-div.docos-streamreplyview, div.docos-streamdocoview-inputcontainer, div.docos-overflowmenu-vertical, div.docos-actionmenu-vertical {\
+div.docos-streamreplyview, div.docos-streamdocoview-inputcontainer, \
+div.docos-overflowmenu-vertical, div.docos-actionmenu-vertical {\
 	background-color: #494949 !important;\
 }\
 div.docos-anchoredreplyview-author, div.docos-streamdocoview-authorname, \
@@ -464,12 +465,12 @@ div#docs-spellcheckslidingdialog-suggestion-list {\
 	border: 0;\
 }\
 \
-/*RESEARCH*/\
-div.docs-reference-pane-container {\
+/*RESEARCH - NEW EXPLORE SIDEBAR (Ctrl+Alt+Shift+I)*/\
+div.docs-explore-sidebar-title {\
 	background-color: #333333;\
 	border: 0;\
 }\
-div.goog-sa-pane-search {\
+div.docs-explore-sidebar, div.docs-dictionary-sidebar {\
 	background-color: #393939;\
 }\
 div.goog-sa-searchbox-back-button.jfk-button-disabled, \
@@ -482,7 +483,8 @@ div.goog-sa-searchbox.goog-sa-component-online .goog-sa-searchbox-selectormenu {
 	border: 1px solid #777777 !important;\
 	border-right: none !important;\
 }\
-div.goog-sa-searchbox-container, div.goog-sa-searchbox-selectormenu {\
+div.goog-sa-searchbox-container, div.goog-sa-searchbox-selectormenu, \
+div.docs-explore-widget {\
 	border-color: #777777 !important;\
 	background-color: #595959 !important;\
 }\
@@ -494,17 +496,29 @@ div.goog-sa-welcome-content>a, div.goog-sa-snippet-title-link, \
 div.goog-sa-component-active, .goog-sa-personal.goog-sa-component-active.goog-sa-component-online \
 .goog-sa-snippet-title-link, .goog-sa-personal .goog-sa-snippet-title-link, \
 div.goog-sa-pane-title, .goog-sa-content.goog-sa-common-heading \
-.goog-sa-content-link {\
+.goog-sa-content-link, div.docs-explore-topicitem-title, \
+div.docs-explore-topicitem-generator-text, div.docs-explore-card-more-button, \
+div.docs-explore-card-title-heading, div.docs-explore-tabbar-tab-label, \
+div.docs-explore-serp-webresult-snippet, div.docs-explore-emptylist-title, \
+div.docs-explore-emptylist-body, div.docs-explore-sidebar-title-heading, \
+div.docs-dictionary-titlebar-heading {\
 	color: #777777 !important;\
 }\
+div.docs-explore-searchbar-suggestion-itemview-title, \
+span.docs-explore-widget-text {\
+    color: #000000 !important;\
+}\
 div.goog-sa-previewpane-closestrip, div.goog-sa-previewpane, \
-div.goog-sa-pane-attribution {\
+div.goog-sa-pane-attribution, div.docs-explore-card, \
+div.docs-explore-nuggetscardview-container, div.docs-explore-searchbar-ac-active, \
+div.docs-explore-serp-webresultsview-card-container {\
 	background-color: #393939 !important;\
 	border-color: #777777 !important;\
 }\
 div.goog-sa-component-online.goog-sa-component-active.goog-sa-sectiongroup-heading, \
 div.goog-sa-snippet .goog-sa-button-bar, div.goog-sa-button-bar, \
-div.goog-sa-personal.goog-sa-component-active .goog-sa-button-bar {\
+div.goog-sa-personal.goog-sa-component-active .goog-sa-button-bar, \
+div.docs-explore-searchbar-ac-renderer {\
 	background-color: #595959 !important;\
 	border-color: #777777 !important;\
 }\
@@ -514,7 +528,9 @@ div.goog-sa-sectiongroup-heading {\
 div.goog-sa-common-heading {\
 	background-color: transparent;\
 }\
-div.goog-sa-scrollfloater > div {\
+div.goog-sa-scrollfloater > div, div.docs-explore-serp-webresultscard-header, \
+div.docs-explore-serp-webresultscard-content, div.docs-explore-serp-webresultscard, \
+div.docs-explore-serp-webresultscard-allresults {\
 	background-color: #393939 !important;\
 	border-color: #777777 !important;\
 }\
@@ -530,6 +546,9 @@ div.goog-sa-component-online.goog-sa-component-active.goog-sa-snippet {\
 div.goog-sa-sneakpeek, div.goog-sa-sneakpeek:last-child {\
 	background-color: #595959 !important;\
 	border-top-color: #494949 !important;\
+	border-bottom-color: #494949 !important;\
+}\
+div.docs-explore-tabbar-tab-selected {\
 	border-bottom-color: #494949 !important;\
 }\
 \
@@ -644,7 +663,8 @@ input.docs-title-input {\
 	border: 0;\
 	box-shadow: none;\
 }\
-textarea.jfk-textinput, textarea.jfk-textinput:focus, input.jfk-textinput, input.jfk-textinput:focus, div.inviter-recipient-area {\
+textarea.jfk-textinput, textarea.jfk-textinput:focus, input.jfk-textinput, \
+input.jfk-textinput:focus, div.inviter-recipient-area {\
 	background-color: #595959 !important;\
 	border: 0;\
 	color: #333333 !important;\
@@ -832,6 +852,7 @@ div[role=group] {\
 }\
 \
 ";
+
 if (/webstore/i.test(window.location.href)) {
     GM_addStyle(webstorecss);
 } else if (/picker.*?kix-fileopen/i.test(window.location.href) ||
@@ -850,11 +871,11 @@ src="https://github.com/identicons/KeyWeeUsr.png" width="24"></img></a></div>';
     panel.insertAdjacentHTML('beforeend', av);
 }
 })();
+
 /*
 Missing:
 1) File -> Organise -> arrow, borders
-2) Tools -> Define&Research -> icons
-3) Docs Help
-4) Report a problem
+2) Docs Help
+3) Report a problem
 Notify me if there's something missing/undesirable.
 */
