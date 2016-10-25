@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Nighty-night Google Docs
 // @namespace    https://github.com/KeyWeeUsr/Userscripts
-// @version      1.4
+// @version      1.5
 // @description  Write at night comfortably!
 // @author       Peter Badida
 // @copyright    2016+, Peter Badida
@@ -529,7 +529,8 @@ div.goog-sa-common-heading {\
 	background-color: transparent;\
 }\
 div.goog-sa-scrollfloater > div, div.docs-explore-serp-webresultscard-header, \
-div.docs-explore-serp-webresultscard-content, div.docs-explore-serp-webresultscard, \
+div.docs-explore-serp-webresultscard-content, \
+div.docs-explore-serp-webresultscard, \
 div.docs-explore-serp-webresultscard-allresults {\
 	background-color: #393939 !important;\
 	border-color: #777777 !important;\
@@ -682,7 +683,7 @@ div.docs-icon-close-thin {\
 div.navigation-widget-hat {\
     border-bottom: solid 1px #777777;\
 }\
-div.navigation-item-level-0 {\
+.navigation-widget-container > div > div > div[role=menuitem] > div {\
     color: #777777 !important;\
 }\
 \
