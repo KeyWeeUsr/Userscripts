@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GitHub Halloween
 // @namespace    https://github.com/KeyWeeUsr/Userscripts
-// @version      0.1
+// @version      0.2
 // @description  Experience Halloween every day
 // @author       Peter Badida
 // @copyright    2016+, Peter Badida
@@ -12,6 +12,7 @@
 // @include      https://*github.com/*
 // @require      http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js
 // @contributionURL https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ACVM74AYCXVWQ
+// @grant        GM_addStyle
 // ==/UserScript==
 /* jshint -W097 */
 'use strict';
@@ -44,6 +45,25 @@
             $(items[i]).attr('fill', '#EEEEEE');
         }
     }
+var css = '\
+ul.legend > li {\
+    background-color: #EEEEEE !important;\
+}\
+ul.legend > li + li {\
+    background-color: #FFEE4A !important;\
+}\
+ul.legend > li + li + li {\
+    background-color: #FFC501 !important;\
+}\
+ul.legend > li + li + li + li {\
+    background-color: #FE9600 !important;\
+}\
+ul.legend > li + li + li + li + li {\
+    background-color: #03001C !important;\
+}\
+\
+';
+GM_addStyle(css);
 })();
 /*
 Notify me if there's something missing/undesirable.
