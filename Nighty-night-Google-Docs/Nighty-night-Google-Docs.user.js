@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Nighty-night Google Docs
 // @namespace    https://github.com/KeyWeeUsr/Userscripts
-// @version      1.5
+// @version      1.6
 // @description  Write at night comfortably!
 // @author       Peter Badida
 // @copyright    2016+, Peter Badida
@@ -633,7 +633,7 @@ div#gb > div > div > div > div > div > div > div > div, a.gb_b {\
 	color: #888888 !important;\
 }\
 div#gb > div > div > div > div > div > div > div > a {\
-	background-color: #696969 !important;\
+	background-color: #393939 !important;\
 	border: 0;\
 	color: #333333 !important;\
 }\
@@ -792,8 +792,8 @@ div > div > div > div > div > div > div > div+div {\
 	border: 0 !important;\
 }\
 div#doclist > div > div > div > div > div > div > div > div > div > div > \
-div > div > div > div > div > div+div {\
-    background-color: #696969 !important;\
+div > div > div > div > div > div+div, div[data-target=layout] {\
+    background-color: #393939 !important;\
     border:0 !important;\
 }\
 div#doclist > div > div > div > div > div > div > div > div > div > label, \
