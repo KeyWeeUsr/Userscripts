@@ -1,12 +1,12 @@
 // ==UserScript==
 // @name         GitHub Halloween
 // @namespace    https://github.com/KeyWeeUsr/Userscripts
-// @version      0.2
+// @version      0.3
 // @description  Experience Halloween every day
 // @author       Peter Badida
 // @copyright    2016+, Peter Badida
 // @license      GNU GPLv3
-// @homepage     https://github.com/KeyWeeUsr/Userscripts/tree/master/GitHubHalloween
+// @homepage     https://github.com/KeyWeeUsr/Userscripts/tree/master/Halloween
 // @supportURL   https://github.com/KeyWeeUsr/Userscripts/issues
 // @icon         https://github.com/favicon.ico
 // @include      https://*github.com/*
@@ -33,15 +33,15 @@
     third = Math.round(second / 2.0);
     for (var i=0; i<items.length; i++) {
         dc = parseInt($(items[i]).attr('data-count'));
-        if (dc == max) {
+        if (dc == max && dc != 0) {
             $(items[i]).attr('fill', '#03001C');
-        } else if (second <= dc && dc <= max - 1) {
+        } else if (second < dc && dc <= max - 1) {
             $(items[i]).attr('fill', '#FE9600');
-        } else if (third <= dc && dc < second) {
+        } else if (third < dc && dc <= second) {
             $(items[i]).attr('fill', '#FFC501');
-        } else if (0 < dc && dc < third) {
+        } else if (0 < dc && dc <= third) {
             $(items[i]).attr('fill', '#FFEE4A');
-        } else if (dc == 0) {
+        } else {
             $(items[i]).attr('fill', '#EEEEEE');
         }
     }

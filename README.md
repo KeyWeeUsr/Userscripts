@@ -73,6 +73,12 @@ the text still remains selected, so you can copy the content manually anyway.
 
 <img src="https://raw.githubusercontent.com/KeyWeeUsr/Userscripts/master/CopyCode/copycode.png" width=500></img>
 
+##### <img src="https://assets-cdn.github.com/favicon.ico" width=16></img>&nbsp;Halloween
+Halloween for GitHub brings back the pumpkin-colored commit calendar featured
+as Halloween egg in 2016.
+
+<img src="https://raw.githubusercontent.com/KeyWeeUsr/Userscripts/master/Halloween/halloween.png" width=500></img>
+
 ---
 
 **_Icons_**
