@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GitHub CopyCode
 // @namespace    https://github.com/KeyWeeUsr/Userscripts
-// @version      0.2
+// @version      0.3
 // @description  Copy content of a code-block everywhere on GitHub
 // @author       Peter Badida
 // @copyright    2016+, Peter Badida
@@ -10,6 +10,7 @@
 // @supportURL   https://github.com/KeyWeeUsr/Userscripts/issues
 // @icon         https://assets-cdn.github.com/favicon.ico
 // @include      *github.com*
+// @exclude      *gist.github.com*
 // @require      http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js
 // @contributionURL https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ACVM74AYCXVWQ
 // ==/UserScript==
