@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GitHub Halloween
 // @namespace    https://github.com/KeyWeeUsr/Userscripts
-// @version      0.3
+// @version      0.4
 // @description  Experience Halloween every day
 // @author       Peter Badida
 // @copyright    2016+, Peter Badida
@@ -18,34 +18,23 @@
 'use strict';
 (function () {
     var items = document.getElementsByClassName("day");
-    var dc;
-    var max = 0;
-    var second;
-    var third;
-    var fourth;
-    for (var i=0; i<items.length; i++) {
-        dc = parseInt($(items[i]).attr('data-count'));
-        if (max < dc) {
-            max = dc;
-        }
-    }
-    second = Math.round(max / 2.0);
-    third = Math.round(second / 2.0);
-    for (var i=0; i<items.length; i++) {
-        dc = parseInt($(items[i]).attr('data-count'));
-        if (dc == max && dc != 0) {
+    var dayFill;
+    for (var i=0; i < items.length; i++) {
+        dayFill = $(items[i]).attr('fill');
+        if (dayFill == "#1e6823") {
             $(items[i]).attr('fill', '#03001C');
-        } else if (second < dc && dc <= max - 1) {
+        } else if (dayFill == "#44a340") {
             $(items[i]).attr('fill', '#FE9600');
-        } else if (third < dc && dc <= second) {
+        } else if (dayFill == "#8cc665") {
             $(items[i]).attr('fill', '#FFC501');
-        } else if (0 < dc && dc <= third) {
+        } else if (dayFill == "#d6e685") {
             $(items[i]).attr('fill', '#FFEE4A');
         } else {
             $(items[i]).attr('fill', '#EEEEEE');
         }
     }
-var css = '\
+
+    var css = '\
 ul.legend > li {\
     background-color: #EEEEEE !important;\
 }\
@@ -60,10 +49,8 @@ ul.legend > li + li + li + li {\
 }\
 ul.legend > li + li + li + li + li {\
     background-color: #03001C !important;\
-}\
-\
-';
-GM_addStyle(css);
+}';
+    GM_addStyle(css);
 })();
 /*
 Notify me if there's something missing/undesirable.
