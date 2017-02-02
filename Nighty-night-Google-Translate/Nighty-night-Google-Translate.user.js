@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Nighty-night Google Translate
 // @namespace    https://github.com/KeyWeeUsr/Userscripts
-// @version      1.4
+// @version      1.5
 // @description  Translate at night comfortably!
 // @author       Peter Badida
 // @copyright    2016+, Peter Badida
@@ -43,7 +43,8 @@ div.gb_je>.gb_R {\
 /*TEXT*/\
 div#spelling-correction, div.gt-ex-text, span.gt-syn-span,\
 div.goog-toolbar-button, .goog-toolbar-menu-button,\
-div.gt-revert-correct-message, span#gt-feedback-caption {\
+div.gt-revert-correct-message, span#gt-feedback-caption,\
+div.gt-src-cc-normal, span#gt-ovfl-xlt-more {\
     color: #777777 !important;\
 }\
 a, textarea#source, .vt-dismiss {\
@@ -104,7 +105,7 @@ div#gt-sl-gms-menu, div#gt-tl-gms-menu {\
 }\
 \
 /*BACKGROUNDS*/\
-div.gb_Mb, div#gt-ft-res {\
+div#gt-ft-res {\
     background-color: #111111 !important;\
     border: 0;\
 }\
@@ -119,7 +120,7 @@ select#gt-sl, select#gt-tl {\
 select#gt-sl:hover, select#gt-tl:hover {\
     background:#f8f8f8 !important;\
 }\
-div.gt-is {\
+div.gt-is, div#gt-ovfl {\
     background-color: #333333;\
     border-style: none;\
 }\
@@ -253,10 +254,10 @@ div.vk-box {\
 }\
 \
 /*APPS*/\
-ul.gb_ja, ul.gb_ca {\
+div#gbwa > div+div > ul {\
     background-color: #333333 !important;\
 }\
-a.gb_ka {\
+div#gbwa > div+div, div#gbwa > div+div > a {\
     background-color: #222222 !important;\
     background: #222222 !important;\
 }\
@@ -318,6 +319,7 @@ div#gb > div > div > div+div > div+div+div+div > div+div > div > div\
     background-color: #f1f1f1 !important;\
     background-image: none !important;\
 }\
+div#gb > div > div > div+div > div+div+div+div > div+div,\
 div#gb > div > div > div+div > div+div+div+div > div+div > div+div+div {\
     background-color: #222222 !important;\
     background: #222222 !important;\
