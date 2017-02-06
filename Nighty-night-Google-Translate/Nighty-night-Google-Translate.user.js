@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Nighty-night Google Translate
 // @namespace    https://github.com/KeyWeeUsr/Userscripts
-// @version      1.5
+// @version      1.6
 // @description  Translate at night comfortably!
 // @author       Peter Badida
 // @copyright    2016+, Peter Badida
@@ -44,7 +44,8 @@ div.gb_je>.gb_R {\
 div#spelling-correction, div.gt-ex-text, span.gt-syn-span,\
 div.goog-toolbar-button, .goog-toolbar-menu-button,\
 div.gt-revert-correct-message, span#gt-feedback-caption,\
-div.gt-src-cc-normal, span#gt-ovfl-xlt-more {\
+div.gt-src-cc-normal, span#gt-ovfl-xlt-more,\
+div#gt-src-is-list > div > div {\
     color: #777777 !important;\
 }\
 a, textarea#source, .vt-dismiss {\
