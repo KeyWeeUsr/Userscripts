@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Nighty-night Google Docs
 // @namespace    https://github.com/KeyWeeUsr/Userscripts
-// @version      1.6
+// @version      1.7
 // @description  Write at night comfortably!
 // @author       Peter Badida
 // @copyright    2016+, Peter Badida
@@ -201,7 +201,7 @@ span.vpc-change-link {\
 }\
 \
 /*MODAL FILE BROWSER*/\
-div.picker.modal-dialog {\
+div.picker.modal-dialog, div.picker-iframe.picker-min.goog-menu {\
 	border:0;\
 }\
 div.goog-tree-root {\
@@ -210,11 +210,14 @@ div.goog-tree-root {\
 div.folder-creation-link, div.folder-creation-link:hover {\
 	color: #777777 !important;\
 }\
-div.folders-popup-summary{\
+div.folders-popup-summary {\
 	background: transparent !important;\
 }\
-div.folders-popup{\
+div.folders-popup {\
 	background-color: #757575;\
+}\
+div.picker-min-arrow-inner {\
+	border-color: #333333 transparent !important;\
 }\
 \
 /*REVISIONS*/\
@@ -493,15 +496,15 @@ div.goog-sa-pane-search {\
 	border-color: #777777 !important;\
 }\
 div.goog-sa-welcome-content>a, div.goog-sa-snippet-title-link, \
-div.goog-sa-component-active, .goog-sa-personal.goog-sa-component-active.goog-sa-component-online \
+div.goog-sa-component-active, div.docs-dictionary-titlebar-heading, \
+.goog-sa-personal.goog-sa-component-active.goog-sa-component-online \
 .goog-sa-snippet-title-link, .goog-sa-personal .goog-sa-snippet-title-link, \
 div.goog-sa-pane-title, .goog-sa-content.goog-sa-common-heading \
 .goog-sa-content-link, div.docs-explore-topicitem-title, \
 div.docs-explore-topicitem-generator-text, div.docs-explore-card-more-button, \
 div.docs-explore-card-title-heading, div.docs-explore-tabbar-tab-label, \
 div.docs-explore-serp-webresult-snippet, div.docs-explore-emptylist-title, \
-div.docs-explore-emptylist-body, div.docs-explore-sidebar-title-heading, \
-div.docs-dictionary-titlebar-heading {\
+div.docs-explore-emptylist-body, div.docs-explore-sidebar-title-heading, {\
 	color: #777777 !important;\
 }\
 div.docs-explore-searchbar-suggestion-itemview-title, \
@@ -623,19 +626,21 @@ div.apps-shortcutshelppopup-header, div.apps-shortcutshelppopup-container {\
 }\
 \
 /*USERPANEL*/\
-div.gb_ga {\
+/*div#gb == div#docs-header > div+div*/\
+div#gb > div > div > div > div+div > div+div {\
 	background: #242424 !important;\
 }\
 div#gb > div > div > div > div > div > div {\
 	background: none !important;\
 }\
-div#gb > div > div > div > div > div > div > div > div, a.gb_b {\
+div#gb > div > div > div > div > div > div > div > div,\
+div#gb > div > div > div > div+div > div > a{\
 	color: #888888 !important;\
 }\
 div#gb > div > div > div > div > div > div > div > a {\
 	background-color: #393939 !important;\
 	border: 0;\
-	color: #333333 !important;\
+	color: #888888 !important;\
 }\
 div#gb > div > div > div > div > div > div > div > a:hover {\
     color: #333333 !important;\
@@ -676,14 +681,15 @@ input.hsv-input {\
 	background-color: #595959 !important;\
 	border-color: gray !important;\
 }\
+\
 /*NAVIGATION*/\
 div.docs-icon-close-thin {\
-    background-color: #777777 !important;\
+    background-color: #444444 !important;\
 }\
 div.navigation-widget-hat {\
-    border-bottom: solid 1px #777777;\
+    border-bottom: solid 1px #444444;\
 }\
-.navigation-widget-container > div > div > div[role=menuitem] > div {\
+div.navigation-widget > div+div+div > div[role=menuitem] > div {\
     color: #777777 !important;\
 }\
 \
@@ -866,8 +872,9 @@ if (/webstore/i.test(window.location.href)) {
 } else {
     GM_addStyle(maincss);
     var panel=document.body;
-    var av='<div style="position: absolute; left: 48.5vw; top: 1vh;"><a \
-href="https://github.com/KeyWeeUsr/Userscripts"><img id="kwu_av" style="opacity: 0.3;"\
+    var av='<div style="position: absolute; left: 48.5vw; top: 1vh;">\
+<a href="https://github.com/KeyWeeUsr/Userscripts">\
+<img id="kwu_av" style="opacity: 0.3;"\
 src="https://github.com/identicons/KeyWeeUsr.png" width="24"></img></a></div>';
     panel.insertAdjacentHTML('beforeend', av);
 }
@@ -875,8 +882,7 @@ src="https://github.com/identicons/KeyWeeUsr.png" width="24"></img></a></div>';
 
 /*
 Missing:
-1) File -> Organise -> arrow, borders
-2) Docs Help
-3) Report a problem
+1) Docs Help popup
+2) Report a problem screen cover
 Notify me if there's something missing/undesirable.
 */
