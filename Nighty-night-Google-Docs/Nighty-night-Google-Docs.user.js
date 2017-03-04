@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Nighty-night Google Docs
 // @namespace    https://github.com/KeyWeeUsr/Userscripts
-// @version      1.8
+// @version      1.9
 // @description  Write at night comfortably!
 // @author       Peter Badida
 // @copyright    2016+, Peter Badida
@@ -425,6 +425,10 @@ div.docs-docos-activitybox {\
 }\
 div.docos-streamdocoview {\
     border-top-color: {softGrey} !important;\
+}\
+div#docos-comment-bubble {\
+    border: 0 !important;\
+    background: {lightHover} !important;\
 }\
 div.docos-streamrootreplyview, div.docos-streamrootreplyview:hover, \
 div.docos-streamreplyview, div.docos-streamdocoview-inputcontainer, \
