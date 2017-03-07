@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GitHub Halloween
 // @namespace    https://github.com/KeyWeeUsr/Userscripts
-// @version      0.4
+// @version      0.5
 // @description  Experience Halloween every day
 // @author       Peter Badida
 // @copyright    2016+, Peter Badida
@@ -21,13 +21,13 @@
     var dayFill;
     for (var i=0; i < items.length; i++) {
         dayFill = $(items[i]).attr('fill');
-        if (dayFill == "#1e6823") {
+        if (dayFill == "#196127") {
             $(items[i]).attr('fill', '#03001C');
-        } else if (dayFill == "#44a340") {
+        } else if (dayFill == "#239a3b") {
             $(items[i]).attr('fill', '#FE9600');
-        } else if (dayFill == "#8cc665") {
+        } else if (dayFill == "#7bc96f") {
             $(items[i]).attr('fill', '#FFC501');
-        } else if (dayFill == "#d6e685") {
+        } else if (dayFill == "#c6e48b") {
             $(items[i]).attr('fill', '#FFEE4A');
         } else {
             $(items[i]).attr('fill', '#EEEEEE');
