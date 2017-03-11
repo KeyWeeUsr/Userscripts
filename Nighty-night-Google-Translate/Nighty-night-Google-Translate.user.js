@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Nighty-night Google Translate
 // @namespace    https://github.com/KeyWeeUsr/Userscripts
-// @version      1.9
+// @version      2.0
 // @description  Translate at night comfortably!
 // @author       Peter Badida
 // @copyright    2016+, Peter Badida
@@ -10,7 +10,7 @@
 // @supportURL   https://github.com/KeyWeeUsr/Userscripts/issues
 // @icon         https://translate.google.com/favicon.ico
 // @include      https://*translate.google.*/*
-// @include      https://plus.google.*/u/0/_/notifications/frame*origin=https%3A%2F%2Ftranslate.google.*
+// @include      https://notifications.google.com/u/0/widget*origin=https%3A%2F%2Ftranslate.google.*
 // @contributionURL https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ACVM74AYCXVWQ
 // @grant        GM_addStyle
 // ==/UserScript==
@@ -286,23 +286,23 @@ div.MNn0h {\
 }\
 \
 /*NOTIFICATIONS*/\
-body.Vzc {\
-    background-color: transparent !important;\
-    background: transparent !important;\
-}\
-div#gbsfw {\
+body > div > div > div > div+div > div {\
     border-color: transparent !important;\
     background-color: {modals} !important;\
 }\
-div.aac {\
+body > c-wiz {\
     background-color: {modals} !important;\
 }\
-div.Kza {\
+body > c-wiz > div > c-wiz > c-wiz > div {\
     background-color: {text} !important;\
     background: {text} !important;\
+    color: {light} !important;\
 }\
-div.Kza:after, div.Kza:before {\
-    border-top-color: {text};\
+body > c-wiz > div > c-wiz > div > c-wiz > div > div > div, \
+body > c-wiz > div > c-wiz > div > c-wiz > div > div, \
+body > c-wiz > div > c-wiz > c-wiz > div > div, \
+body > c-wiz > div > c-wiz > div > c-wiz > div {\
+    color: {light} !important;\
 }\
 \
 /*USERPANEL*/\
