@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Nighty-night Google Docs
 // @namespace    https://github.com/KeyWeeUsr/Userscripts
-// @version      1.9
+// @version      2.0
 // @description  Write at night comfortably!
 // @author       Peter Badida
 // @copyright    2016+, Peter Badida
@@ -257,7 +257,7 @@ div.docs-revisions-tile-content-wrapper, div.docs-revisions-tile, \
 div#docs-revisions-sidebar-actions {\
     border: 0;\
 }\
-span.docs-revisions-tile-link, span.docs-revisions-tile-timestamp, \
+span.docs-revisions-tile-link, .docs-revisions-tile-timestamp, \
 div.docs-revisions-sidebar-header-text-color-brand {\
     color: {text} !important;\
 }\
@@ -721,6 +721,9 @@ input.hsv-input {\
 div.docs-icon-close-thin {\
     background-color: {lightHover} !important;\
 }\
+div.navigation-widget-hat-title {\
+    color: {text} !important;\
+}\
 div.navigation-widget-hat {\
     border-bottom: solid 1px {lightHover};\
 }\
@@ -772,11 +775,12 @@ body > div > div > div > div > div > input#searchbox-input {\
     border: 0;\
     box-shadow: none;\
 }\
-body > div > div > div, body > div > div+div+div, \
+body, body > div > div > div, body > div > div+div+div, \
 body > div > div > div > div > div > div > div > div > a > div, \
 body > div > div > div > div > div > div > div > div > a > div+div+div {\
     background-color: {darkModal} !important;\
     border: 0 !important;\
+    color: {text} !important;\
 }\
 body > div > div > div > div > div[role=listbox] {\
     background: {darkModal} !important;\
