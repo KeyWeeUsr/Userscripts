@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Nighty-night Google Translate
 // @namespace    https://github.com/KeyWeeUsr/Userscripts
-// @version      2.1
+// @version      2.2
 // @description  Translate at night comfortably!
 // @author       Peter Badida
 // @copyright    2016+, Peter Badida
@@ -258,6 +258,12 @@ button.vk-btn {\
     background-color: {bg_light} !important;\
     border-color: {bg_light};\
 }\
+button.vk-sf-a, button.vk-sf-s {\
+    color: {text};\
+    background-image: none !important;\
+    background-color: {highlight} !important;\
+    border-color: {bg_light};\
+}\
 button.vk-sf-h {\
     background-color: {highlight} !important;\
     background-image: none !important;\
@@ -424,9 +430,11 @@ css = css.replace(new RegExp('{light}', 'gi'), light);
 css = css.replace(new RegExp('{highlight}', 'gi'), highlight);
 GM_addStyle(css);
 var panel=document.getElementById('gt-lang-right');
-var av='<a href="https://github.com/KeyWeeUsr/Userscripts"><img id="kwu_av"\
-src="https://github.com/identicons/KeyWeeUsr.png" width="28" style="position:\
-relative; opacity: 0.3; float: right; right: 4px;"></img></a>';
+var av_style = 'position: relative; opacity: 0.3; float: right; \
+right: 4px; border-radius: 5px;';
+var av='<a href="https://github.com/KeyWeeUsr/Userscripts"><img id="kwu_av" \
+src="https://github.com/identicons/KeyWeeUsr.png" width="28" \
+style="' + av_style + '"></img></a>';
 panel.insertAdjacentHTML('afterbegin', av);
 })();
 /*
