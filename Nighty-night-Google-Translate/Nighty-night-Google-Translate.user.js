@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Nighty-night Google Translate
 // @namespace    https://github.com/KeyWeeUsr/Userscripts
-// @version      2.3
+// @version      2.4
 // @description  Translate at night comfortably!
 // @author       Peter Badida
 // @copyright    2016+, Peter Badida
@@ -141,7 +141,7 @@ div.gt-is-tr-on .gt-is-ld-top, div.gt-is-tr-on .gt-is-ld {\
     border-top: 1px solid {light} !important;\
 }\
 div.gt-hl-layer {\
-    background-color: none !important;\
+    background-color: {bg_medium} !important;\
     border: 0 !important;\
 }\
 \
