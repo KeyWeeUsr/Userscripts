@@ -40,10 +40,6 @@ adjusted to working at night. Say no more to those white eye-burning pages!
 
 ###### Missing stuff
 not/bad implemented or missing after Google updates
-- File
-  - Organise -> arrow, borders (bypassed)
-- Tools
-  - Research -> icons (bypassed)
 - Help (dynamically created iframes)
   - Docs Help
   - Report a problem
