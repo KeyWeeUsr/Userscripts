@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Nighty-night Google Docs
 // @namespace    https://github.com/KeyWeeUsr/Userscripts
-// @version      2.0
+// @version      2.1
 // @description  Write at night comfortably!
 // @author       Peter Badida
 // @copyright    2016+, Peter Badida
@@ -420,6 +420,7 @@ div.docos-streampane-header jfk-button {\
     background-color: {buttons};\
     color: {darkModal} !important;\
 }\
+div.docos-overflowmenu-outer > .docos-docomenu-dropdown, \
 div.docs-docos-activitybox {\
     border: 0;\
 }\
@@ -453,7 +454,7 @@ div.docos-showrepliesbutton {\
     color: {text} !important;\
 }\
 textarea.docos-input-textarea {\
-    background-color: {text} !important;\
+    background-color: {buttons} !important;\
     border: 0 !important;\
 }\
 div.docos-anchoredreplyview, div.docos-showrepliesbutton {\
