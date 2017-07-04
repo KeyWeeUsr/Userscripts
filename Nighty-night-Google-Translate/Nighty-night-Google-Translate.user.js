@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Nighty-night Google Translate
 // @namespace    https://github.com/KeyWeeUsr/Userscripts
-// @version      2.4
+// @version      2.5
 // @description  Translate at night comfortably!
 // @author       Peter Badida
 // @copyright    2016+, Peter Badida
@@ -29,7 +29,8 @@ var highlight = '#F1F1F1';
 
 var css = "\
 /*TOOLBAR*/\
-div#gt-apb-main, div#gt-appbar {\
+/*gt-appbar is the text under the top-left Google*/\
+div#gt-appbar, div#gt-appbar > div > div {\
     background-color: {bg_dark} !important;\
     background: {bg_dark} !important;\
     border: 0;\
@@ -209,7 +210,7 @@ div#pb-tb-c, table#gt-pb-tb{\
 li.ita-kd-menuitem, span.ita-kd-menuitem-inputtool-name {\
     color: {light} !important;\
 }\
-span.ita-kd-inputtools-div {\
+span.ita-kd-inputtools-div, div.ita-kd-separator {\
     color: {text}; background-image: none !important;\
     background-color: transparent !important;\
     border-color: {bg_light};\
@@ -227,7 +228,7 @@ div.ita-hwt-backspace:hover {\
 }\
 li.ita-kd-menuitem-hover {\
     background-color: {bg_medium} !important;\
-    color: {bg_medium} !important;\
+    color: {bg_light} !important;\
 }\
 div.ita-hwt-buttons, div.ita-hwt-candidates {\
     border-top: 1px solid {light} !important;\
@@ -277,6 +278,7 @@ div.vk-box {\
 }\
 \
 /*APPS*/\
+/*#gbwa is the 'app' icon on the right left panel*/\
 div#gbwa > div+div > ul {\
     background-color: {modals} !important;\
 }\
@@ -287,14 +289,17 @@ div#gbwa > div+div, div#gbwa > div+div > a {\
 div#gbwa > div+div > span {\
     border-bottom: 1px solid {light} !important;\
 }\
+/*disappeared?*/\
 div.MNn0h {\
     background-color: {bg_medium} !important;\
     background: {bg_medium} !important;\
 }\
-.gb_Z:hover:not(.gb_0) a {\
+/*app icon's border*/\
+div#gbwa > div+div > ul > li:hover > a {\
     border: 1px solid {bg_medium} !important;\
 }\
-.gb_Z:hover .gb_4 {\
+/*app icon's (under)title*/\
+div#gbwa > div+div > ul > li:hover > a > span+span {\
     background: {bg_medium} !important;\
 }\
 \
@@ -321,10 +326,6 @@ body > c-wiz > div > c-wiz > div > c-wiz > div {\
 /*USERPANEL*/\
 div#gb > div > div > div+div > div+div+div+div > div+div > div > div > div {\
     color: {light} !important;\
-}\
-div.gb_R {\
-    background-color: {text} !important;\
-    background: {text} !important;\
 }\
 div#gb > div > div {\
     background-color: {bg_black} !important;\
