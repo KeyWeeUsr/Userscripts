@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Nighty-night Google Docs
 // @namespace    https://github.com/KeyWeeUsr/Userscripts
-// @version      2.1
+// @version      2.2
 // @description  Write at night comfortably!
 // @author       Peter Badida
 // @copyright    2016+, Peter Badida
@@ -410,7 +410,8 @@ div.docos-anchoreddocoview-arrow-outer, \
 div.docos-anchoreddocoview-arrow-inner {\
     border-right: 20px solid {darkHover} !important;\
 }\
-div.docos-streampane-content, div.docos-streampane-header {\
+div.docos-streampane-content, div.docos-streampane-header, \
+div.docos-replyview-quote {\
     border:0;\
     background-color:{darkHover};\
     color: {buttons} !important;\
@@ -640,20 +641,31 @@ div.apps-shortcutshelppopup-ac-renderer {\
     border: 0 !important;\
 }\
 h3.apps-shortcutshelppopup-search-label, \
-h3.apps-shortcutshelppopup-content-header, \
-h2.apps-shortcutshelppopup-dialog-title {\
+div.apps-shortcutshelpcontentimpl-search-label, \
+h3.apps-actiondatawidget-content-header, \
+h2.apps-shortcutshelpcontentimpl-dialog-title, \
+div.apps-navigationwidget {\
+    color: {text} !important;\
+}\
+div.apps-navigationwidget-item-selected {\
+    background-color:{darkHover} !important;\
+    color: {text} !important;\
+}\
+div.apps-shortcutshelpcontentimpl-container {\
+    background-color: {darkModal} !important;\
     color: {text} !important;\
 }\
 table.apps-shortcutshelppopup-content {\
     background-color: {lightModal};\
     color: {text} !important;\
 }\
-td.apps-shortcutshelppopup-content-element, \
+td.apps-actiondatawidget-content-element, \
 a.apps-shortcutshelppopup-help-center-link {\
     color: {text} !important;\
     border: 0;\
 }\
-div.apps-shortcutshelppopup{\
+div.apps-shortcutshelppopup, \
+div.apps-navigationwidget-item-hover {\
     background-color:{darkHover} !important;\
     box-shadow: none;\
 }\
