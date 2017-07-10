@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Nighty-night Google Translate
 // @namespace    https://github.com/KeyWeeUsr/Userscripts
-// @version      2.6
+// @version      2.7
 // @description  Translate at night comfortably!
 // @author       Peter Badida
 // @copyright    2016+, Peter Badida
@@ -425,6 +425,14 @@ input:focus {\
 }\
 img#kwu_av:hover {\
     opacity: 1 !important;\
+}\
+\
+/*TRANSLATE WEBPAGE*/\
+form > fieldset+fieldset > div > div {\
+    background: {bg_light} !important;\
+}\
+form > div > button {\
+    background: {modals} !important;\
 }\
 \
 ";
