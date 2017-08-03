@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Nighty-night Google Translate
 // @namespace    https://github.com/KeyWeeUsr/Userscripts
-// @version      2.8
+// @version      2.9
 // @description  Translate at night comfortably!
 // @author       Peter Badida
 // @copyright    2016+, Peter Badida
@@ -49,7 +49,7 @@ div#gb > div > div+div > div > a {\
 div.gb_je>.gb_R {\
     line-height: 60px;\
 }\
-/*preferred lang + Chrome suggestion toolbar*/\
+/*prefered lang + Chrome suggestion toolbar*/\
 body > div > div {\
     background-color: {bg_medium} !important;\
 }\
@@ -284,7 +284,7 @@ button.vk-sf-h {\
     background-image: none !important;\
 }\
 div.vk-box {\
-    background-color: {modals} !important;\
+    background-color: {bg_medium} !important;\
 }\
 \
 /*APPS*/\
@@ -443,6 +443,18 @@ form > fieldset+fieldset > div > div {\
 }\
 form > div > button {\
     background: {modals} !important;\
+}\
+\
+/*GT day survey*/\
+div.gt-hats-tt {\
+    color: {light} !important;\
+}\
+div.gt-hats {\
+    border: 0 !important;\
+    background-color: {bg_medium} !important;\
+}\
+div.gt-hats-t {\
+    border: 0 !important;\
 }\
 \
 ";
