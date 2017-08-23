@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Nighty-night Google Translate
 // @namespace    https://github.com/KeyWeeUsr/Userscripts
-// @version      2.9
+// @version      3.0
 // @description  Translate at night comfortably!
 // @author       Peter Badida
 // @copyright    2016+, Peter Badida
@@ -317,8 +317,11 @@ div#gbwa > div+div > ul > li:hover > a > span+span {\
 /*#gbsfw is the notifications panel, but selecting it\
 trough div > div ... syntax cripples the toolbar colors\
 when translating a whole website*/\
-body > div > div > div > div > div+div, div#gbsfw {\
+body > div > div > div > div > div+div, div#gbsfw, \
+body > div > div > div > div+div > div+div+div > div+div {\
+    border: 1px solid transparent;\
     border-color: transparent !important;\
+    background: {modals} !important;\
     background-color: {modals} !important;\
 }\
 body > c-wiz {\
