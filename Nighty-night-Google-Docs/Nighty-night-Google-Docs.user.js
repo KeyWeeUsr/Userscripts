@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Nighty-night Google Docs
 // @namespace    https://github.com/KeyWeeUsr/Userscripts
-// @version      2.3
+// @version      2.4
 // @description  Write at night comfortably!
 // @author       Peter Badida
 // @copyright    2016+, Peter Badida
@@ -259,7 +259,8 @@ div#docs-revisions-sidebar-actions {\
     border: 0;\
 }\
 span.docs-revisions-tile-link, .docs-revisions-tile-timestamp, \
-div.docs-revisions-sidebar-header-text-color-brand {\
+div.docs-revisions-sidebar-header-text-color-brand, \
+div.docs-revisions-sidebar-name-filter-switch-container > label {\
     color: {text} !important;\
 }\
 div.docs-revisions-tile-selected {\
@@ -275,6 +276,14 @@ div.docs-revisions-chromecover-titlebar-color-brand {\
 }\
 div.docs-revisions-chromecover-titlebar-color-brand:hover {\
     background-color: {hover} !important;\
+}\
+div.docs-revisions-chromecover-titlebar-button-action {\
+    background-color: {darkModal} !important;\
+    background: {darkModal} !important;\
+    color: {text} !important;\
+}\
+div.docs-revisions-sidebar-actions {\
+    border-top: 1px solid {lightModal} !important;\
 }\
 \
 /*PUBLISH*/\
@@ -943,9 +952,10 @@ if (/webstore/i.test(window.location.href)) {
 } else {
     css = maincss;
     var panel=document.body;
+    var av_style = 'position: relative; opacity: 0.3; border-radius: 5px;';
     var av='<div style="position: absolute; left: 48.5vw; top: 1vh;">\
 <a href="https://github.com/KeyWeeUsr/Userscripts">\
-<img id="kwu_av" style="opacity: 0.3;"\
+<img id="kwu_av" style="' + av_style + '"\
 src="https://github.com/identicons/KeyWeeUsr.png" width="24"></img></a></div>';
     panel.insertAdjacentHTML('beforeend', av);
 }
