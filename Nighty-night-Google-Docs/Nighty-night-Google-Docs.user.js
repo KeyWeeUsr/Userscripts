@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Nighty-night Google Docs
 // @namespace    https://github.com/KeyWeeUsr/Userscripts
-// @version      2.5
+// @version      2.6
 // @description  Write at night comfortably!
 // @author       Peter Badida
 // @copyright    2016+, Peter Badida
@@ -51,7 +51,8 @@ img#kwu_av:hover {\
 }\
 /*TOOLBAR*/\
 div#docs-chrome, div#docs-toolbar-wrapper, \
-div#docs-title-widget div.goog-inline-block, div.goog-toolbar {\
+div#docs-title-widget div.goog-inline-block, div.goog-toolbar, \
+div#docs-toolbar-wrapper.docs-material {\
     color: {text} !important;\
     background-color: {black} !important;\
     background-image: none !important;\
