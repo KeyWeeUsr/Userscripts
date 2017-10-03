@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CopyPasteBin
 // @namespace    https://github.com/KeyWeeUsr/Userscripts
-// @version      0.1
+// @version      0.2
 // @description  Copy content of a PasteBin snippet with a single click
 // @author       Peter Badida
 // @copyright    2017+, Peter Badida
@@ -10,7 +10,6 @@
 // @supportURL   https://github.com/KeyWeeUsr/Userscripts/issues
 // @icon         https://pastebin.com/favicon.ico
 // @include      *pastebin.com*
-// @require      http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js
 // @contributionURL https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ACVM74AYCXVWQ
 // ==/UserScript==
 /* jshint -W097 */
@@ -38,14 +37,17 @@
     }
 
     function addButton() {
-        var codeContainer = document.getElementById("code_buttons").children[0];
+        var codeContainer = document.getElementById(
+            "code_buttons"
+        ).children[0];
 
         // create COPY button on mouse enter
         var codeButton = document.createElement("a");
         codeButton.setAttribute("id", "cpb_button");
         codeButton.setAttribute("class", "buttonsm");
         codeButton.innerHTML = "copy";
-        codeButton.style = "cursor: pointer; display: inline; font-style: italic;";
+        codeButton.style = "cursor: pointer; display: inline;" +
+                           "font-style: italic;";
 
         // insert COPY button in front of the right side buttons
         codeContainer.insertBefore(codeButton, codeContainer.children[0]);
@@ -55,28 +57,41 @@
     }
 
     function appendMe() {
-        var av_style = "opacity: 0.3; border-radius: 10px;"
-        var av_cont_style = "margin: 2px 10px -2px 0px;"
-        var av = $('<li style="' + av_cont_style + '">' +
-                   '<div style="float: right;"><a href="' +
-                   'https://github.com/KeyWeeUsr/Userscripts">' +
-                   '<img id="kwu_av" style="' + av_style + '" ' +
-                   'src="https://github.com/identicons/KeyWeeUsr.png" ' +
-                   'width="24"></img></a></div></li>');
+        var codeContainer = document.getElementById(
+            "code_buttons"
+        ).children[0];
 
-        av.mouseenter(function () {
-            $('#kwu_av').css('opacity', 1.0);
+        // create AV
+        var av = document.createElement("a");
+        av.setAttribute(
+            "href",
+            "https://github.com/KeyWeeUsr/Userscripts"
+        );
+        av.setAttribute("id", "kwu_av");
+        av.style = "display: inline;";
+
+        // create AV image
+        var avImg = document.createElement("img");
+        avImg.setAttribute(
+            "src",
+            "https://github.com/identicons/KeyWeeUsr.png"
+        );
+        avImg.style = "width: 20px; vertical-align: middle;" +
+                      "margin: 0px 0px 0px 8px; opacity: 0.3";
+        avImg.addEventListener("mouseover", function() {
+            avImg.style.opacity = "1";
+        });
+        avImg.addEventListener("mouseout", function() {
+            avImg.style.opacity = "0.3";
         });
 
-        av.mouseleave(function () {
-            $('#kwu_av').css('opacity', 0.3);
-        });
-        $('.pagehead-actions').prepend(av);
+        av.appendChild(avImg);
+        codeContainer.insertBefore(av, codeContainer.children[0]);
     }
 
     // run
-    addButton();
     if (!document.getElementById('kwu_av')){
         appendMe();
     }
+    addButton();
 })();
