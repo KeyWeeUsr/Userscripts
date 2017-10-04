@@ -50,17 +50,11 @@ combination for writing at night even in foreign language.
 
 <img src="https://raw.githubusercontent.com/KeyWeeUsr/Userscripts/master/Nighty-night-Google-Translate/nightynight2.png" width=500></img>
 
-##### <img src="https://assets-cdn.github.com/favicon.ico" width=16></img>&nbsp;Top Repos (not available on Greasy Fork)
-Top Repos for GitHub changes the "Popular repositories" (left) box to show only
-user's repositories ordered by star count. The script makes finding the real
-popular repos easier than going through `Sources` on `Repositories` tab which
-shows the user's repos unordered.
+##### <img src="https://pastebin.com/favicon.ico" width=16></img>&nbsp;CopyPasteBin
+CopyPasteBin allows you to simply click on a button and copy whole paste
+content from a PasteBin snippet.
 
-_**No longer maintained due to GitHub's new ["Pinned repositories"](https://github.com/blog/2191-pin-repositories-to-your-github-profile)**_
-
-The script still works if you have no pinned repos set.
-
-<img src="https://raw.githubusercontent.com/KeyWeeUsr/Userscripts/master/TopRepos/toprepos.png" width=500></img>
+<img src="https://raw.githubusercontent.com/KeyWeeUsr/Userscripts/master/CopyPasteBin/copypastebin.png" width=500></img>
 
 ##### <img src="https://assets-cdn.github.com/favicon.ico" width=16></img>&nbsp;CopyCode
 CopyCode for GitHub allows you to simply click on a button and copy whole
@@ -74,6 +68,18 @@ Halloween for GitHub brings back the pumpkin-colored commit calendar featured
 as Halloween egg in 2016.
 
 <img src="https://raw.githubusercontent.com/KeyWeeUsr/Userscripts/master/Halloween/halloween.png" width=500></img>
+
+##### <img src="https://assets-cdn.github.com/favicon.ico" width=16></img>&nbsp;Top Repos (not available on Greasy Fork)
+Top Repos for GitHub changes the "Popular repositories" (left) box to show only
+user's repositories ordered by star count. The script makes finding the real
+popular repos easier than going through `Sources` on `Repositories` tab which
+shows the user's repos unordered.
+
+_**No longer maintained due to GitHub's new ["Pinned repositories"](https://github.com/blog/2191-pin-repositories-to-your-github-profile)**_
+
+The script still works if you have no pinned repos set.
+
+<img src="https://raw.githubusercontent.com/KeyWeeUsr/Userscripts/master/TopRepos/toprepos.png" width=500></img>
 
 ---
 
