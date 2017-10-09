@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         CopyPasteBin
 // @namespace    https://github.com/KeyWeeUsr/Userscripts
-// @version      0.2
+// @version      0.3
 // @description  Copy content of a PasteBin snippet with a single click
 // @author       Peter Badida
 // @copyright    2017+, Peter Badida
@@ -17,21 +17,8 @@
 
 (function () {
     function selectText(element) {
-        var range;
-
-        // select raw textarea contents
-        if (document.body.createTextRange) {
-            range = document.body.createTextRange();
-            range.moveToElementText(element);
-            range.select();
-        } else if (window.getSelection) {
-            var selection = window.getSelection();
-            range = document.createRange();
-            range.selectNode(element);
-            selection.removeAllRanges();
-            selection.addRange(range);
-        }
-
+        // textarea select
+        element.select();
         // copy to clipboard
         document.execCommand('copy');
     }
