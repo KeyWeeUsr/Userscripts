@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Nighty-night Google Docs
 // @namespace    https://github.com/KeyWeeUsr/Userscripts
-// @version      2.6
+// @version      2.7
 // @description  Write at night comfortably!
 // @author       Peter Badida
 // @copyright    2016+, Peter Badida
@@ -723,7 +723,7 @@ div.kix-ruler-contributed-dragger-container, div#kix-ruler {\
     border:0;\
     background-color: {softBlack} !important;\
 }\
-div.kix-ruler-background-inner {\
+div.docs-ruler-background-inner {\
     background-color: {softGrey} !important;\
 }\
 \
