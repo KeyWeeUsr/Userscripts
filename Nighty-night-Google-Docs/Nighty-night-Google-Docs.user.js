@@ -5,7 +5,7 @@
 // @description  Write at night comfortably!
 // @author       Peter Badida
 // @copyright    2016+, Peter Badida
-// @license      GNU GPLv3
+// @license      GPL-3.0
 // @homepage     https://github.com/KeyWeeUsr/Userscripts/tree/master/Nighty-night-Google-Docs
 // @supportURL   https://github.com/KeyWeeUsr/Userscripts/issues
 // @icon         https://www.google.com/docs/about/favicon.ico
