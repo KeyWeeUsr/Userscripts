@@ -5,7 +5,7 @@
 // @description  Copy content of a PasteBin snippet with a single click
 // @author       Peter Badida
 // @copyright    2017+, Peter Badida
-// @license      GNU GPLv3
+// @license      GPL-3.0
 // @homepage     https://github.com/KeyWeeUsr/Userscripts/tree/master/CopyPasteBin
 // @supportURL   https://github.com/KeyWeeUsr/Userscripts/issues
 // @icon         https://pastebin.com/favicon.ico
