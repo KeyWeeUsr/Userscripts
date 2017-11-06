@@ -5,7 +5,7 @@
 // @description  Show star-ordered user's repositories in "Popular repositories"
 // @author       Peter Badida
 // @copyright    2016+, Peter Badida
-// @license      GNU GPLv3
+// @license      GPL-3.0
 // @homepage     https://github.com/KeyWeeUsr/Userscripts/tree/master/TopRepos
 // @supportURL   https://github.com/KeyWeeUsr/Userscripts/issues
 // @icon         https://assets-cdn.github.com/favicon.ico
