@@ -5,7 +5,7 @@
 // @description  Translate at night comfortably!
 // @author       Peter Badida
 // @copyright    2016+, Peter Badida
-// @license      GNU GPLv3
+// @license      GPL-3.0
 // @homepage     https://github.com/KeyWeeUsr/Userscripts/tree/master/Nighty-night-Google-Translate
 // @supportURL   https://github.com/KeyWeeUsr/Userscripts/issues
 // @icon         https://translate.google.com/favicon.ico
