@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Nighty-night Google Docs
 // @namespace    https://github.com/KeyWeeUsr/Userscripts
-// @version      2.7
+// @version      2.8
 // @description  Write at night comfortably!
 // @author       Peter Badida
 // @copyright    2016+, Peter Badida
@@ -133,6 +133,15 @@ div.jfk-button:hover {\
     background-color: {hover} !important;\
     background-image: none !important;\
     border: 0 !important;\
+}\
+div.goog-toolbar-button-hover, div.goog-toolbar-menu-button-hover {\
+    background-color: {hover} !important;\
+    border: 0 !important;\
+    background-image: -webkit-linear-gradient(top,#f8f8f8,#f1f1f1) !important;\
+    background-image: -moz-linear-gradient(top,#f8f8f8,#f1f1f1) !important;\
+    background-image: -ms-linear-gradient(top,#f8f8f8,#f1f1f1) !important;\
+    background-image: -o-linear-gradient(top,#f8f8f8,#f1f1f1) !important;\
+    background-image: linear-gradient(top,#f8f8f8,#f1f1f1) !important;\
 }\
 div.jfk-button-standard.jfk-button-hover, div.jfk-button-hover {\
     background-color: {hover} !important;\
