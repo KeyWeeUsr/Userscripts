@@ -572,7 +572,7 @@ div.docs-explore-emptylist-body, div.docs-explore-sidebar-title-heading, {\
     color: {text} !important;\
 }\
 div.docs-explore-searchbar-suggestion-itemview-title, \
-span.docs-explore-widget-text {\
+span.docs-explore-widget-text, div.docs-explore-card-more-button {\
     color: {darkHover} !important;\
 }\
 div.goog-sa-previewpane-closestrip, div.goog-sa-previewpane, \
