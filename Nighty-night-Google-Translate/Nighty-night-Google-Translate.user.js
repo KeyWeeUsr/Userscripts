@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Nighty-night Google Translate
 // @namespace    https://github.com/KeyWeeUsr/Userscripts
-// @version      3.0
+// @version      3.1
 // @description  Translate at night comfortably!
 // @author       Peter Badida
 // @copyright    2016+, Peter Badida
@@ -12,7 +12,6 @@
 // @include      https://*translate.google.*/*
 // @include      https://notifications.google.com/u/0/widget*origin=https%3A%2F%2Ftranslate.google.*
 // @contributionURL https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ACVM74AYCXVWQ
-// @grant        GM_addStyle
 // ==/UserScript==
 /* jshint -W097 */
 'use strict';
@@ -469,7 +468,15 @@ css = css.replace(new RegExp('{text}', 'gi'), text);
 css = css.replace(new RegExp('{bg_light}', 'gi'), bg_light);
 css = css.replace(new RegExp('{light}', 'gi'), light);
 css = css.replace(new RegExp('{highlight}', 'gi'), highlight);
-GM_addStyle(css);
+
+// Change CSS after DOM is loaded
+window.onload = function() {
+    var head_tag = document.getElementsByTagName('head')[0];
+    var style_tag = document.createElement('style');
+    style_tag.setAttribute('type', 'text/css');
+    style_tag.textContent = css;
+    head_tag.appendChild(style_tag);
+}
 var panel=document.getElementById('gt-lang-right');
 var av_style = 'position: relative; opacity: 0.3; float: right; \
 right: 4px; border-radius: 5px;';
