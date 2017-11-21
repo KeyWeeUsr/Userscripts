@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GitHub Halloween
 // @namespace    https://github.com/KeyWeeUsr/Userscripts
-// @version      0.5
+// @version      0.6
 // @description  Experience Halloween every day
 // @author       Peter Badida
 // @copyright    2016+, Peter Badida
@@ -13,6 +13,7 @@
 // @require      http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js
 // @contributionURL https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ACVM74AYCXVWQ
 // @grant        GM_addStyle
+// @require https://greasemonkey.github.io/gm4-polyfill/gm4-polyfill.js
 // ==/UserScript==
 /* jshint -W097 */
 'use strict';
