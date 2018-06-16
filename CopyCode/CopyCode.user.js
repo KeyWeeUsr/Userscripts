@@ -5,7 +5,7 @@
 // @description  Copy content of a code-block everywhere on GitHub
 // @author       Peter Badida
 // @copyright    2016+, Peter Badida
-// @license      GPL-3.0
+// @license      GPL-3.0+; http://www.gnu.org/licenses/gpl-3.0.txt
 // @homepage     https://github.com/KeyWeeUsr/Userscripts/tree/master/CopyCode
 // @supportURL   https://github.com/KeyWeeUsr/Userscripts/issues
 // @icon         https://assets-cdn.github.com/favicon.ico
