@@ -81,6 +81,25 @@ The script still works if you have no pinned repos set.
 
 <img src="https://raw.githubusercontent.com/KeyWeeUsr/Userscripts/master/TopRepos/toprepos.png" width=500></img>
 
+##### <img src="https://assets.tumblr.com/images/favicons/favicon.ico" width=16></img>&nbsp;AutoReblog2Queue
+Userscript for Tumblr Dashboard which automatically changes the reblogging
+option to "Add to queue" and reblogs it immediately.
+
+Basically this little script takes an advantage of the already available
+behavior of Tumblr keyboard shortcuts i.e. navigating via J and K keys
+together with R for reblogging. The script works in the background, checks
+whether the modal window is present (waits if not), changes the reblogging
+options and then presses the "Queue" button (changed "Reblog" button).
+
+Just use these navigation keys: J (up), K (down), L (heart), R (reblog).
+
+You can toggle the autoreblogging script on/off with the Ctrl + Q keys.
+It's turned ON by default.
+
+Also, if you deactivated the script and pressed R (reblog), you can always
+activate it back with Ctrl + Q keys and the script will automatically add
+the current post you are reblogging to the queue.
+
 ---
 
 **_Icons_**
