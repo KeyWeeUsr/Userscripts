@@ -100,8 +100,7 @@ Also, if you deactivated the script and pressed R (reblog), you can always
 activate it back with Ctrl + Q keys and the script will automatically add
 the current post you are reblogging to the queue.
 
-##### <img src="https://www.geocaching.com/favicon.ico" width=16\
-></img>&nbsp;GeocachingPremiumOnlyLOG
+##### <img src="https://www.geocaching.com/favicon.ico" width=16></img>&nbsp;GeocachingPremiumOnlyLOG
 Userscript for Geocaching.com that adds a button for a link to log even
 "Premium Member Only Geocache" via direct access to the log that ordinary
 people might not be able to find.
