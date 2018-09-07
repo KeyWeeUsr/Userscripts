@@ -5,7 +5,7 @@
 // @description  Allow Basic Members to log a Premiom Member caches.
 // @author       Peter Badida
 // @copyright    2018+, Peter Badida
-// @license      GPL-3.0+; http://www.gnu.org/licenses/gpl-3.0.txt
+// @license      GPL-3.0-or-later; http://www.gnu.org/licenses/gpl-3.0.txt
 // @homepage     https://github.com/KeyWeeUsr/Userscripts/tree/master/GeocachingPremiumOnlyLOG
 // @downloadURL  https://github.com/KeyWeeUsr/Userscripts/raw/master/GeocachingPremiumOnlyLOG/GeocachingPremiumOnlyLOG.user.js
 // @installURL   https://github.com/KeyWeeUsr/Userscripts/raw/master/GeocachingPremiumOnlyLOG/GeocachingPremiumOnlyLOG.user.js

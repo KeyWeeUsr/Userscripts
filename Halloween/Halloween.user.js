@@ -5,7 +5,7 @@
 // @description  Experience Halloween every day
 // @author       Peter Badida
 // @copyright    2016+, Peter Badida
-// @license      GPL-3.0+; http://www.gnu.org/licenses/gpl-3.0.txt
+// @license      GPL-3.0-or-later; http://www.gnu.org/licenses/gpl-3.0.txt
 // @homepage     https://github.com/KeyWeeUsr/Userscripts/tree/master/Halloween
 // @supportURL   https://github.com/KeyWeeUsr/Userscripts/issues
 // @icon         https://github.com/favicon.ico
