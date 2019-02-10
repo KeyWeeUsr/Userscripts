@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         GeocachingPremiumOnlyLOG
-// @version      1.0
+// @version      1.1
 // @namespace    https://github.com/KeyWeeUsr/Userscripts
 // @description  Allow Basic Members to log a Premiom Member caches.
 // @author       Peter Badida
@@ -25,13 +25,9 @@ var target;   // banner-like element with pmo_text
 var link;     // replacement for the PMO banner
 var li;       // single element on Difficulty/Terrain/... bar
 
-banners = document.getElementsByClassName("pmo-banner");
-for (var i = 0; i < banners.length; i++) {
-    if(banners[i].children[0].innerText == pmo_text) {
-        create = true;
-        target = banners[i];
-        break;
-    }
+banners = document.getElementsByClassName("premium-upgrade-widget");
+if (banners.length > 0) {
+    create = true;
 }
 
 // make sure the script doesn't take any additional resources
@@ -51,8 +47,8 @@ if(create) {
     link.style.color = "#04c8d6";
     link.style.fontWeight="bold"
 
-	// put the link into LI element
-	li.appendChild(link);
+    // put the link into LI element
+    li.appendChild(link);
 
     // append link on the Difficulty/Terrain/... bar
     target = document.getElementsByClassName("ul__hide-details")[0];
